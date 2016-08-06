@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			canvas {
+				border: 3px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="display" height="400" width="600">CANVAS NOT SUPPORTED</canvas>
+		<!--<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+		<br/>
+		<textarea id="in"></textarea>
+		</br>
+		MAP TYPE:&nbsp;<select id="maptype">
+			<option value="b1">simple</option>
+			<option value="d1">dungeon 1</option>
+			<option value="d2">dungeon 2</option>
+			<option value="d3">dungeon 3</option>
+			<option value="w1">world 1</option>
+			<option value="w2">world 2</option>
+			<option value="w3">world 3</option>
+		</select>
+		<br/>
+		<script src="SBLK_MINIMAP.js"></script>
+		<input type="button" value="CREATE MINIMAP!" onclick="MINIMAP(getMap(),getMapType())"/>
+	</body>
+</html>

@@ -1,0 +1,270 @@
+--=[introduction]=--
+In 2008, a game called Spongebob: Invasion of the Lava King was launched on nick.com
+This game was released in three parts. It was an action RPG likely inspired by
+Legend of Zelda. I have made numerous attempts at understanding the mysterious
+".sbz" files it loads from nick's servers. In early 2015, I finally, with the help of a friend,
+cracked it. I then, nearly a year after this, have gotten to documenting the format
+in its "raw" form, to the best of my abilities. During my attempts at understanding this
+game, I discovered references to "spongebobzelda" , hinting not only at that this game
+must take some inspiration from LOZ, a series I've not plaid much of, but what the file
+extension .sbz probably actually stands for. The present status of this game is dire.
+Since its relase about 8 years ago, the game has succomb to some major glitches.
+Inivisible objects and enemies, unexplained failures of a map to load, and the
+menus being almost entirely broken have now rendered the game virtually unplayable.
+I have managed to find the developer, but any attempts to contact them have been in
+vain. Their present status or whereabouts are unknown. I hereby publish this documentation
+both as a guide for myself, or any other programmer/hacker/fan who wants to one day bring this
+game back, perhaps better than it was intitially when it was released. My current goal is to
+build a map editor. There are many steps to this, one of them was to understand the map format.
+The next step would be to optimize this horribly inefficient, and completely not human-friendly
+disaster of an XML document that is the true, raw form, of the map data for this game.
+-ETXAlienRobot201 / Brian / <whatever you might know me as>   
+
+
+--=[SpongeBobZelda Map Format]=--
+encoding (as file): base64 text file (.sbz)
+intermediate: Compressed Flash Byte Array (in memory, somewhere...)
+raw data/decoded: XML (.xml)
+upcoming: JSON (.json)
+
+--=[Structure]=--
+
+=[Encoded]=
+Base64, looks like gibberish or spam-text.
+The length of the sample file was 1188.
+
+=[intermediate]=
+However Flash stores Byte Arrays.
+The length of this form, in bytes is unknown.
+Technically, the bite array is compressed or decompressed, depending on whether the map
+is being read from, or written to.
+
+=[XML]=
+This form only is known to exist during run-time.
+That is, until me and a bud figured-out how to export the map.
+This is effectively the true format/structure of an SBZ map.
+It is extremely inefficient with size, and I suspect it slows the computer's performance
+at least slightly. While XML is known to be human and machine readable, no sane human
+tries to understand or do much with the map in this format. I should know, I tried.
+I only managed to make a few minor tweaks. Anything serious would've cocievably taken me
+MONTHS, most of that time spent dissecting the xml line by line, NO JOKE.
+The sample file was 35210 characters in length, although this number has been increased
+significantly because of the map decoder "pretty-printing it", a feature I requestd. 
+
+[m]
+root XML tag for entire document
+Assumed to mean "map".
+Contains nearly all of the map data, not just the tiles, as would be expected.
+r: XML tag, assumed to mean "row" , it contains several c tags
+	c: XML tag, self-closing when empty, stores every object for a single tile position, assumed "cell"
+		t: self-closing XML tag, contains multiple attributes defining a single tile
+			l: XML attribute, always number, id refrencing an asset in the lexicon
+			rm: XML attribute, always number, stores room number, assumed "room"
+			*the following are all related, and store floating point numbers
+			that define a transformation matrix that is used to flip or
+			rotate the asset when necesarry.
+			ma: XML attribute, assumed "matrix a"
+			mb: XML attribute, assumed "matrix b"
+			mc: XML attribute, assumed "matrix c"
+			md: XML attribute, assumed "matrix d"
+		o: self-closing XML tag, contains multiple attributes defining many kinds of object
+			l: XML attribute, always number, id refrencing an asset in the lexicon
+			rm: XML attribute, always number, stores room number, assumed "room"
+			*the following are all related, and store floating point numbers
+			that define a transformation matrix that is used to flip or
+			rotate the asset when necesarry.
+			ma: XML attribute, assumed "matrix a"
+			mb: XML attribute, assumed "matrix b"
+			mc: XML attribute, assumed "matrix c"
+			md: XML attribute, assumed "matrix d"
+			m: XML attribute, used by doors, contains the name of a map
+			dl: XML attribute, used by door, always number, contains the door link of the door
+			pl: XML attribute, used by puzzle, always number, contains the puzzle link of the puzzle
+			
+		i: self-closing XML tag, contains attributes defining an item, assumed "item"
+			l: XML attribute, always number, id refrencing an asset in the lexicon
+			rm: XML attribute, always number, stores room number, assumed "room"
+		m: self-closing XML tag, contains attributes defining an event
+			l: XML attribute, always number, id refrencing an asset in the lexicon
+			rm: XML attribute, always number, stores room number, assumed "room"
+
+[ds]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of doors.
+d: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[es]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of enemies.
+e: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+	i: XML attribute, always a string, an item to drop on death
+
+[chs]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of characters.
+it: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[cs]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of chests.
+c: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[ps]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of destructable map objects.
+de: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+	spC: XML attribute, always a number, assumed "solved puzzle cell"... so x position of solved puzzle
+	spR: XML attribute, always a number, assumed "solved puzzle row"... so y position of solved puzzle
+
+[its]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of items.
+it: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[evs]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of event objects.
+ev: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[ws]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of 'wand-able' map objects.
+de: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+
+[des]
+XML tag when containing one or more self-closing tag, otherwise is self-closing.
+Stores the x and y position of destructable map objects.
+de: self-closing XML tag, contains two attributes
+	c: XML attribute, always a number, assumed "cell"... so x position 
+	r: XML attribute, always a number, assumed "row"... so y position
+	i: XML attribute, always a string, an item to drop on death
+
+[lex]
+XML tag, contains one self-closing tag
+Assumed to mean "lexicon" / "dictionary" / "atlas".
+Seems to be a lookup table for what assets a map requires.
+There's a new <lex> tag for every new asset, not highly efficient.
+d: self-closing XML tag, contains two attributes
+	id: XML attribute, always a number
+	l: XML atttribute, a string of text with the in-game assetID of the particular asset
+	
+-=[upcoming versions]=-
+1.3 : JSON dump of entire map, with minor tweaks, and added meta-data, transitional format
+1.5 : slightly more optimized, cleans ambiguity issue
+1.7 : even more optimized
+2.0 : new stuff, unlikely to have legacy support
+
+=[1.3]=
+This format is not a terrible improvement in efficiency or file size from the XML formatted data.
+The main reason for this is that it is a transitional stage, and aside from being in
+a different format + re-strucutured a bit, this version contains absolutely
+all of the data the last official version, dubbed "1.0" would have had. It also has
+its own bloat added to help resolve ambiguities converting to even newer versions.
+length in characters of sample file was 27171
+
+[meta]
+JSON object
+stores meta-data such as author and publish date.
+author: JSON string, the name of the individual(s) whom created this map
+date: JSON object, stores the creation or publish date of this map
+	month: JSON string , self-explanatory
+	day: JSON string , self-explanatory
+	year: JSON string , self-explanatory
+version: JSON floating point number, major.minor
+comment<x>: JSON string, there can be many of these, starting at x = 1, self-explanatory
+	They are optional, so many maps might not have them at all.
+
+[tileData]
+JSON object
+Only the tile data from the last official version goes here.
+
+[objects]
+JSON object
+ALL of the object data from the previous format goes here.
+the "dedicated sections" from version 1.0 all are re-created here, with clear
+and obvious names, no need to re-document them.
+objects : JSON Array of JSON objects
+	This contains the lexicon and lookup information for any object previously mixed-in with the
+	tilemap.
+	It also has their cell and rows appended to aid in resolving the ambiguity issue that
+	would otherwise make it a challenge to differentiate between the assorted types of 
+	map or game object.
+
+[assetLexicon]
+JSON array of JSON objects
+The lex elements' data is here, now contained in a single object.
+Other than there now being a single container for all of the data,
+and a descriptive name for it, this section has not been modified even slightly.
+	
+=[1.5]=
+The main goal of this version is to resolve the ambiguity issue with game/map objects.
+Starting from here, all of the data required for any given object is consildated
+into one entry, in the specified section it belongs. This technically could be considered 
+a transitional version. However, it is actually a usable / release-ready version.
+Length in characters of sample file was 26851.
+
+=[1.5 > 1.7 transition]=
+A section of matrix data was added in 1.3 version to aid in the conversion of matrices to meta-id's.
+The new matices section is temporarily, and will be stored in an external database
+when every one of sblk's original maps has been converted to JSON, and every existing
+matrix has been linked to a meta id.
+A skipped section was added to 1.3 also, dims, it stores map height and width.
+The lexicon id 0 is added, it points to an asset called "BLANK_TILE" , its sole
+purpose is for handling blank tiles.
+
+=[1.7]=
+Matrices were converted to meta-id's.
+Rooms were given their own sections.
+Lenth of sample file in characters: 8360, excluding the matrix lookup.
+
+[dims]
+contains a w property and an h property, for map width and height, respectively.
+
+[tileData]
+Re-structured a lot.
+Matrix transforms were replaced with meta-data.
+Tile entries now are l.m , for example, 1.3 is a tile with a lexicon id of 1,
+and a meta-id of 3.
+
+[roomData]
+Rooms were read from the tileData section and now are stored here.
+This section is an array of integers
+
+*[ALL OBJECTS]
+ma-md attributes replaced with a new mm attribute.
+The meta-id scheme is the same as it was for tiles.
+
+=[2.0]=
+Legacy support (by myself, anyways) , dropped.
+Re-structured the room data.
+A converter was created to update 1.7 room data to 2.0 room data.
+This converter is by no means efficient.
+Length of example file in characters: 5702 (again, omitting the matrix data)
+
+[roomData]
+MAJOR OVERHAUL
+Is now an array of JSON objects with following structure:
+	x: x pos of room, int
+	y: y pos of room, int
+	x2: greatest x pos of room, int
+	y2: greatest y pos of room, int
+	reg: array of region objects, easily enables rooms to be non-rectangular, 
+	although regions are rectangles. Region objects contain the same attributes
+	as room objects, minus the reg array. Thes attributes also serve the same
+	purpose, except they pertain to the specific region, and not its parent room.
