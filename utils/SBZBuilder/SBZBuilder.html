@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			canvas{
+				border: 3px solid black;
+				cursor: none;
+			}
+			h4 {
+				margin: 2px;
+			}
+			#instruct{
+				font-weight:bold;
+			}
+		</style>
+		<title>SBZBuilder (SpongebobZelda Map Editor)</title>
+		<meta name="description" content="SpongebobZelda Map Editor">
+		<meta name="author" content="brian151 (github)">
+		<meta name="organization" content="Quality Cat Games">
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<canvas id="gameScreen" width="600" height="300">Your browser doesn't support HTML5 Canvas!!!</canvas>
+		<script src="scripts/libs/GameLib/core/Game.js"></script>
+		<script src="scripts/libs/GameLib/assets/AssetManager.js"></script>
+		<script src="scripts/libs/GameLib/gfx/GraphicsHandler.js"></script>
+		<script src="scripts/libs/GameLib/core/InputManager.js"></script>
+		<script src="scripts/sbzbuilder/BGGrid.js"></script>
+		<script src="scripts/sbzbuilder/MyGame.js"></script>
+		<script src="scripts/sbzbuilder/Main.js"></script>
+		<h3>instructions</h3>
+		<div id="instruct">
+		...
+			<div id="preRenderingArea" style="display:none">
+			<canvas id="screenP" width="600" height="300">Your browser doesn't support HTML5 Canvas!!!</canvas>
+			<div id="dynamicPre"></div>
+			</div>
+		</div>
+	</body>
+</html>
