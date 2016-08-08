@@ -10,5 +10,13 @@ status:
 early dev, adding the most basic of the basic
 
 features:
-scrollable BG grid (underlying framework for it!)
-custom mouse cursor (very WIP...)
+[scrollable BG grid]
+doesn't support negative values
+move mouse close to edge of screen to scroll
+[custom mouse cursor] 
+(very WIP...)
+[asset librabries]
+(format extremely WIP)
+internal structure and implementation currently very hacky
+[debug stuff]
+show coords of BG grid

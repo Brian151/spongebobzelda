@@ -1,0 +1,48 @@
+{
+	"groups" : ["cur"],
+	"preload" : true,
+	"assets" : [ 
+		{
+			"id" : "brush",
+			"file" : "brush.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "erase",
+			"file" : "erase.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "hflip",
+			"file" : "hflip.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "link",
+			"file" : "link.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "move",
+			"file" : "move.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "rotate",
+			"file" : "rotate.png",
+			"group" : "cur",
+			"type" : "image"
+		},
+		{
+			"id" : "vflip",
+			"file" : "vflip.png",
+			"group" : "cur",
+			"type" : "image"
+		}
+	]
+}
