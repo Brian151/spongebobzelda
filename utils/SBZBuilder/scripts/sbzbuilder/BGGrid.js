@@ -1,3 +1,4 @@
+//BROKEN, use BGGrid2.js!
 var BGGrid = function(parent,x,y) {
 	this.parent = parent;
 	this.x = x;

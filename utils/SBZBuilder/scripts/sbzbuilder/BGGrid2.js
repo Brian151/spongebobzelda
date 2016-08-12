@@ -1,0 +1,107 @@
+var BGGrid = function(parent,viewport,rows,cols,tw,th,img,settings) {
+	this.view = viewport;
+	this.rows = rows || 2;
+	this.cols = cols || 2;
+	this.img = img || false;
+	this.tiles = [];
+	this.parent = parent;
+	for (var ix=0; ix < cols; ix++) {
+		this.tiles.push([]);
+		for (var iy=0; iy < rows; iy++) {
+			if(!this.img) {
+				this.tiles[ix].push({draw:function(){}});
+			} else {
+				this.tiles[ix].push({isImg:true,img:this.img});
+			}
+		}
+	}
+	this.settings = settings || {};
+	console.log(JSON.stringify(this.settings));
+	this.tileWidth = tw;
+	this.tileHeight = th;
+	this.x = 0;
+	this.y = 0;
+	this.tX = 0;
+	this.tY = 0;
+	this.rx = this.view.x + this.x;
+	this.ry = this.view.y + this.y;
+	this.translatePos();
+}
+BGGrid.prototype.translatePos = function() {
+	var nX = (this.x < 0);
+	var nY = (this.y < 0); 
+	var x2 = Math.floor(this.x/this.tileWidth) * this.tileWidth;
+	var y2 = Math.floor(this.y/this.tileHeight) * this.tileHeight;
+	this.tX = Math.floor(this.x/this.tileWidth);
+	this.tY = Math.floor(this.y/this.tileHeight);
+	if (this.settings.minX) {
+		if(this.x < 0) this.x = 0;
+	}
+	if (this.settings.minY) {
+		if(this.y < 0) this.y = 0;
+	}
+	if (this.settings.maxX) {
+		if(this.x > this.settings.maxX) this.x = this.settings.maxX;
+	}
+	if (this.settings.maxY) {
+		if(this.y > this.settings.maxY) this.y = this.settings.maxY;
+	}
+	var x3 = this.x - x2;
+	var y3 = this.y - y2;
+	if (nX) {
+		x2 = Math.floor((-this.x)/this.tileWidth) * this.tileWidth;
+		x3 = this.x + x2;
+	}
+	if (nY) {
+		y2 = Math.floor((-this.y)/this.tileHeight) * this.tileHeight;
+		y3 = this.y + y2;
+	}
+	var fX = -x3;
+	var fY = -y3;
+	//console.log(fX);
+	//console.log(fY);
+	this.rx = this.view.x + fX;
+	this.ry = this.view.y + fY;
+	if(nX) {
+		if (this.settings.negXOff) this.rx -= this.settings.negXOff;
+	}
+	if(nY) { 
+		if (this.settings.negYOff) this.ry -= this.settings.negYOff;
+	}
+}
+BGGrid.prototype.draw = function() {
+	var initX = this.rx;
+	var initY = this.ry;
+	var maxX = this.cols || this.settings.maxW;
+	var maxY = this.rows || this.settings.maxH;
+	if (maxX == this.cols) {
+		var minX = 0;
+	} else {
+		var minX = this.tX;
+	}
+	if (maxY == this.rows) {
+		var minY = 0;
+	} else {
+		var minY = this.tY;
+	}
+	for (var ix=minX; ix < maxX; ix++) {
+		for (var iy=minY; iy < maxY; iy++) {
+			var skip = false;
+			if (ix < 0 || ix >= this.cols) skip = true;
+			if (iy < 0 || iy >= this.rows) skip = true;
+			if (skip) {
+				continue;
+			} else {
+				var t = this.tiles[ix][iy];
+				if (t.draw) {
+					t.draw
+				} else if (t.isImg) {
+					var tx2 = this.rx + (ix * this.tileWidth);
+					var ty2 = this.ry + (iy * this.tileHeight);
+					this.parent.renderer.ctx.drawImage(t.img,tx2,ty2);
+				}
+			}
+		}
+	}
+	
+}

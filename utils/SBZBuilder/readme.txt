@@ -11,7 +11,7 @@ early dev, adding the most basic of the basic
 
 features:
 [scrollable BG grid]
-doesn't support negative values
+100% operational - locked to min X and Y of 0, however
 move mouse close to edge of screen to scroll
 [custom mouse cursor] 
 (very WIP...)
