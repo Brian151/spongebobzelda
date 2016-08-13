@@ -20,3 +20,5 @@ move mouse close to edge of screen to scroll
 internal structure and implementation currently very hacky
 [debug stuff]
 show coords of BG grid
+[tilemap]
+prototype stage, currently randomly generated

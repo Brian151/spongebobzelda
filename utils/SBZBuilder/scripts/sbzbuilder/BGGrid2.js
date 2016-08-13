@@ -16,7 +16,7 @@ var BGGrid = function(parent,viewport,rows,cols,tw,th,img,settings) {
 		}
 	}
 	this.settings = settings || {};
-	console.log(JSON.stringify(this.settings));
+	//console.log(JSON.stringify(this.settings));
 	this.tileWidth = tw;
 	this.tileHeight = th;
 	this.x = 0;
@@ -28,12 +28,6 @@ var BGGrid = function(parent,viewport,rows,cols,tw,th,img,settings) {
 	this.translatePos();
 }
 BGGrid.prototype.translatePos = function() {
-	var nX = (this.x < 0);
-	var nY = (this.y < 0); 
-	var x2 = Math.floor(this.x/this.tileWidth) * this.tileWidth;
-	var y2 = Math.floor(this.y/this.tileHeight) * this.tileHeight;
-	this.tX = Math.floor(this.x/this.tileWidth);
-	this.tY = Math.floor(this.y/this.tileHeight);
 	if (this.settings.minX) {
 		if(this.x < 0) this.x = 0;
 	}
@@ -46,6 +40,12 @@ BGGrid.prototype.translatePos = function() {
 	if (this.settings.maxY) {
 		if(this.y > this.settings.maxY) this.y = this.settings.maxY;
 	}
+	var nX = (this.x < 0);
+	var nY = (this.y < 0); 
+	var x2 = Math.floor(this.x/this.tileWidth) * this.tileWidth;
+	var y2 = Math.floor(this.y/this.tileHeight) * this.tileHeight;
+	this.tX = Math.floor(this.x/this.tileWidth);
+	this.tY = Math.floor(this.y/this.tileHeight);
 	var x3 = this.x - x2;
 	var y3 = this.y - y2;
 	if (nX) {
@@ -72,8 +72,8 @@ BGGrid.prototype.translatePos = function() {
 BGGrid.prototype.draw = function() {
 	var initX = this.rx;
 	var initY = this.ry;
-	var maxX = this.cols || this.settings.maxW;
-	var maxY = this.rows || this.settings.maxH;
+	var maxX = this.settings.maxW || this.cols;
+	var maxY = this.settings.maxH || this.rows;
 	if (maxX == this.cols) {
 		var minX = 0;
 	} else {
@@ -84,24 +84,32 @@ BGGrid.prototype.draw = function() {
 	} else {
 		var minY = this.tY;
 	}
-	for (var ix=minX; ix < maxX; ix++) {
-		for (var iy=minY; iy < maxY; iy++) {
+	var ix2 =0;
+	var iy2 =0;
+	for (var ix=minX; ix < maxX + minX; ix++) {
+		iy2 = 0;
+		for (var iy=minY; iy < maxY + minY; iy++) {
 			var skip = false;
 			if (ix < 0 || ix >= this.cols) skip = true;
 			if (iy < 0 || iy >= this.rows) skip = true;
 			if (skip) {
+				iy2++;
 				continue;
 			} else {
 				var t = this.tiles[ix][iy];
 				if (t.draw) {
-					t.draw
+					var tx2 = this.rx + (ix2 * this.tileWidth);
+					var ty2 = this.ry + (iy2 * this.tileHeight);
+					t.draw(tx2,ty2);
 				} else if (t.isImg) {
-					var tx2 = this.rx + (ix * this.tileWidth);
-					var ty2 = this.ry + (iy * this.tileHeight);
+					var tx2 = this.rx + (ix2 * this.tileWidth);
+					var ty2 = this.ry + (iy2 * this.tileHeight);
 					this.parent.renderer.ctx.drawImage(t.img,tx2,ty2);
 				}
+				iy2++;
 			}
 		}
+		ix2++;
 	}
 	
 }
