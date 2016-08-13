@@ -32,9 +32,17 @@
 		<script src="scripts/sbzbuilder/Tile.js"></script>
 		<script src="scripts/sbzbuilder/MyGame.js"></script>
 		<script src="scripts/sbzbuilder/Main.js"></script>
+		<br/><button onclick="setTile(0)">blue tile</button>
+		<button onclick="setTile(1)">yellow tile</button>
+		<button onclick="setTile(2)">green tile</button>
+		<button onclick="setTile(3)">red tile</button>
+		<br/><button onclick="setEMode('brush')">brush</button>
+		<button onclick="setEMode('erase')">eraser</button>
 		<h3>instructions</h3>
 		<div id="instruct">
-		move mouse to edge of map : scroll map
+		move mouse to edge of map window: scroll map<br/>
+		click tile buttons: change current tile<br/>
+		click brush/eraser buttons: chnage current tool
 			<div id="preRenderingArea" style="display:none">
 			<canvas id="screenP" width="600" height="300">Your browser doesn't support HTML5 Canvas!!!</canvas>
 			<div id="dynamicPre"></div>

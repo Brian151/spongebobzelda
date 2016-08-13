@@ -19,6 +19,14 @@ move mouse close to edge of screen to scroll
 (format extremely WIP)
 internal structure and implementation currently very hacky
 [debug stuff]
-show coords of BG grid
+show tile coords of tile grid
+show tile coords of mouse relative to tile grid
 [tilemap]
 prototype stage, currently randomly generated
+locked to 32x32 tles for now
+[editing]
+choose between 'brush' or erase
+choose between 4 different placeholder tiles
+
+next:
+asset selection menu for tiles
