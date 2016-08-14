@@ -1,0 +1,151 @@
+DOOR LINKS
+created mainly to verify all maps are present
+could possibly be used for cheating
+
+
+patrick01a:
+1 patrick01b
+
+patric01b:
+0 worldmap10
+1 patrick01a
+
+worldmap10:
+0 patrick01b
+1 sandy01
+2 worldmap11
+3 dungeon11a
+4 dungeon12a
+
+sandy01:
+1 worldmap10
+
+worldmap11:
+0 squid01
+1 dungeon12a
+2 worldmap10
+3 dungeonmap12
+
+dungeon11a:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+1 dungeon11b
+2 dungeon11c
+3 worldmap10
+
+dungeon12a:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+1 worldmap11
+2 dungeon12b
+3 dungeon12c
+4 worldmap10
+5 dungeon12d
+
+dungeon11b:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+3 IN
+3 IN
+0 dungeon11d
+1 dungeon11a
+
+dungeon11c:
+0 dungeon11e
+2 dungeon11a
+
+dungeon11d:
+0 dungeon11b
+
+dungeon11e:
+0 dungeon11c
+
+squid01:
+0 worldmap11
+
+dungeonmap12:
+0 worldmap13
+1 worldmap20
+3 worldmap11
+
+dungeon12b:
+0 dungeon12d
+1 dungeon12f
+2 dungeon12a
+
+dungeon12c:
+0 dungeon12e
+3 dungeon12a
+
+dungeon12d:
+0 dungeon12b
+5 dungeon12a
+
+dungeon12f:
+1 dungeon12b
+
+dungeon12e:
+0 dungeon12c
+
+worldmap13:
+0 dungeonmap12
+1 dungeon13a
+
+dungeon13a:
+0 dungeon13e
+1 worldmap13
+2 dungeon13b
+3 boss01
+4 dungeon13c
+
+dungeon13e:
+0 dungeon13a
+
+dungeon13b:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+2 dungeon13a
+
+boss01:
+3 dungeon13a
+
+dungeon13c:
+0 dungeon13d
+4 dungeon13a
+
+dungeon13d:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+3 IN
+3 IN
+0 dungeon13c
+
+//END EPISODE 1
+
+worldmap20:
+0 patrick02a
+1 dungeonmap12
+2 worldmap21
+3 worldmap22
+4 worldmap23
+
