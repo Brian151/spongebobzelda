@@ -149,3 +149,162 @@ worldmap20:
 3 worldmap22
 4 worldmap23
 
+patrick02a:
+0 worldmap20
+
+worldmap21:
+0 dungeon21a
+1 worldmap24
+2 worldmap20
+
+worldmap22:
+0 sandy02a
+1 dungeon22a
+3 worldmap20
+
+worldmap23:
+0 worldmap30
+1 worldmap25
+2 dungeon23a
+3 dungeon23c
+4 worldmap20
+5 dungeon23d
+
+dungeon21a:
+1 IN
+1 IN
+2 IN
+2 IN
+3 IN
+3 IN
+5 IN
+5 IN
+6 IN
+6 IN
+0 worldmap21
+4 dungeon21b
+
+dungeon21b:
+0 dungeon21c
+4 dungeon21a
+
+dungeon21c:
+0 dungeon21b
+1 dungeon21d
+2 dungeon21d
+3 dungeon21d
+4 dungeon21e
+
+dungeon21d:
+1 dungeon21c
+2 dungeon21c
+3 dungeon21c
+
+dungeon21e:
+4 dungeon21c
+
+worldmap24:
+0 squid02a
+1 worldmap21
+
+squid02a:
+0 worldmap24
+
+sandy02a:
+0 worldmap22
+1 sandy02b
+
+dungeon22a:
+0 dungeon22b
+1 worldmap22
+2 dungeon22c
+3 dungeon22d
+
+dungeon22b:
+1 IN
+1 IN
+2 IN
+2 IN
+3 IN
+3 IN
+0 dungeon22a
+4 dungeon22d
+
+dungeon22c:
+0 IN
+0 IN
+1 IN
+1 IN
+3 IN
+3 IN
+2 dungeon22a
+5 dungeon22d
+
+dungeon22d:
+2 dungeon22e
+3 dungeon22a
+4 dungeon22b
+5 dungeon22c
+
+dungeon22e:
+1 dungeon22f
+2 dungeon22d
+
+dungeon22f:
+1 dungeon22e
+
+worldmap25:
+0 dungeon23a
+1 worldmap23
+
+dungeon23a:
+0 worldmap25
+1 dungeon23b
+2 worldmap23
+
+dungeon23c:
+0 IN
+0 IN
+1 IN
+1 IN
+4 IN
+4 IN
+2 dungeon23b
+3 worldmap23
+5 boss02
+
+dungeon23d:
+0 dungeon23b
+1 dungeon23f
+5 worldmap23
+
+dungeon23b:
+0 dungeon23d
+1 dungeon23a
+2 dungeon23c
+3 dungeon23e
+
+boss02:
+5 dungeon23c
+
+dungeon23f:
+0 dungeon23e
+1 dungeon23d
+2 dungeon23g
+3 dungeon23h
+
+dungeon23e:
+1 IN
+1 IN
+0 dungeon23f
+3 dungeon23b
+
+dungeon23h:
+3 dungeon23f
+
+dungeon23g:
+2 dungeon23f
+
+//END EPISODE 2
+
+worldmap30:
