@@ -1,7 +1,11 @@
 DOOR LINKS
-created mainly to verify all maps are present
-could possibly be used for cheating
-
+created mainly to verify all maps are present.
+could possibly be used for cheating.
+does not necesarrily follow the exct order maps would be played,
+rather the order in which they actually occur. (This file was created by de-coding 
+every map and copying the doorlink data, and following the trail. Maps appear in the
+order they are linked, and also the order which i chose to follow those links.)
+Links labeled 'IN' are internal doors.
 
 patrick01a:
 1 patrick01b
@@ -308,3 +312,230 @@ dungeon23g:
 //END EPISODE 2
 
 worldmap30:
+0 worldmap23
+1 patrick03a
+2 dungeon33a
+3 worldmap31
+4 worldmap32
+
+patrick03a:
+1 worldmap30
+
+dungeon33a:
+0 IN
+0 IN
+1 IN
+1 IN
+2 worldmap30
+3 dungeon33b
+4 dungeon33b
+5 dungeon33b
+6 dungeon33b
+7 dungeon33b
+8 dungeon33b
+9 dungeon33b
+10 dungeon33c
+11 dungeon33c
+12 dungeon33d
+13 dungeon33d
+14 dungeon33e
+15 dungeon33e
+16 dungeon33e
+17 dungeon33f
+18 dungeon33f
+19 dungeon33f
+20 dungeon33g
+21 dungeon33g
+22 dungeon33g
+23 boss03
+24 dungeon33c
+
+worldmap31:
+0 sandy03a
+1 worldmap33
+2 worldmap32
+3 worldmap30
+4 worldmap34
+
+worldmap32:
+0 dungeon31a
+1 dungeon31a
+2 worldmap31
+4 worldmap30
+
+dungeon33b:
+3 dungeon33a
+4 dungeon33a
+5 dungeon33a
+6 dungeon33a
+7 dungeon33a
+8 dungeon33a
+9 dungeon33a
+
+dungeon33c:
+0 IN
+0 IN
+24 dungeon33a
+1 dungeon33d
+10 dungeon33a
+11 dungeon33a
+
+dungeon33d:
+0 IN
+0 IN
+2 IN
+2 IN
+1 dungeon33c
+3 dungeon33h
+12 dungeon33a
+13 dungeon33a
+
+dungeon33e:
+0 dungeon33f
+1 dungeon33i
+16 dungeon33a
+14 dungeon33a
+15 dungeon33a
+
+dungeon33f:
+1 IN
+1 IN
+0 dungeon33e
+17 dungeon33a
+18 dungeon33a
+19 dungeon33a
+
+dungeon33g:
+20 dungeon33a
+21 dungeon33a
+22 dungeon33a
+
+boss03:
+23 dungeon33a
+
+dungeon33h:
+3 dungeon33d
+
+dungeon33i:
+1 dungeon33e
+
+sandy03a:
+0 worldmap31
+1 sandy03b
+
+sandy03b:
+1 sandy03a
+
+worldmap33:
+0 worldmap35
+1 worldmap31
+2 squid03a
+
+worldmap34:
+1 worldmap35
+4 worldmap31
+
+dungeon31a:
+0 worldmap32
+1 worldmap32
+2 dungeon31b
+
+dungeon31b:
+0 IN
+0 IN
+1 IN
+1 IN
+3 IN
+3 IN
+2 dungeon31a
+4 dungeon31c
+5 dungeon31d
+
+dungeon31c:
+0 dungeon31e
+4 dungeon31b
+
+dungeon31d:
+1 dungeon31e
+5 dungeon31b
+
+dungeon31e:
+0 dungeon31c
+1 dungeon31d
+2 dungeon31f
+
+dungeon31f:
+2 dungeon31e
+
+worldmap35:
+0 worldmap33
+1 worldmap34
+2 dungeon32a
+3 dungeon32b
+4 dungeon32c
+
+squid03a:
+1 squid03b
+2 worldmap33
+
+squid03b:
+1 squid03a
+2 squid03c
+
+squid03c:
+2 squid03b
+
+dungeon32a:
+1 IN
+1 IN
+3 IN
+3 IN
+4 IN
+4 IN
+0 dungeon32b
+2 worldmap35
+5 dungeon32h
+
+dungeon32b:
+0 dungeon32a
+3 worldmap35
+
+dungeon32c:
+0 IN
+0 IN
+1 IN
+1 IN
+2 IN
+2 IN
+3 IN
+3 IN
+5 IN
+5 IN
+8 dungeon32d
+4 worldmap35
+6 dungeon32e
+7 dungeon33f
+
+dungeon32h:
+5 dungeon32a
+
+dungeon32d:
+0 dungeon32e
+8 dungeon32c
+2 dungeon32g
+1 dungeon32f
+
+dungeon32e:
+0 dungeon32d
+6 dungeon32c
+
+dungeon32f:
+1 dungeon32d
+7 dungeon32c
+
+dungeon32g:
+2 dungeon32d
+
+//END EPISODE 3
+
+//END GAME
