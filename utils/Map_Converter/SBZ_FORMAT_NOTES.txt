@@ -252,7 +252,7 @@ The meta-id scheme is the same as it was for tiles.
 
 =[2.0]=
 Legacy support (by myself, anyways) , dropped.
-Re-structured the room data.
+Re-structured the room data. {FEATURE REMOVED... NOT WORKING}
 A converter was created to update 1.7 room data to 2.0 room data.
 This converter is by no means efficient.
 Length of example file in characters: 5702 (again, omitting the matrix data)

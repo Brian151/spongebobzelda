@@ -21,17 +21,19 @@
 			<br/>
 			
 		</h3>
-		<div id="display" height="600" width="800">MAP</div>
+		<textarea rows="16" cols="48" id="in">EXPORTED MAP</textarea>
+		<textarea rows="16" cols="48" id="display" height="600" width="800">CONVERTED MAP</textarea>
 		<!--<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
 		<br/><br/>
+		<script src="SBLK_MAP.js"></script>
+		<script src="SBLK_MAP_2.js"></script>
+		<script src="SBLK_MAP_3.js"></script>
+		<script src="SBLK_MAP_4.js"></script>
+		<button onclick="readXML()">convert!</button>
 		<h4 align="left">
 			Whereas the map exporter is designed to read the base64-encoded text files called ".sbz",
 			The purpose of this program is to convert them to a more human-readbale form.
 			There are four scripts, each containing one function responsible for doing a certain thing to the map data.
 		</h4>
-		<script src="SBLK_MAP.js"></script>
-		<script src="SBLK_MAP_2.js"></script>
-		<script src="SBLK_MAP_3.js"></script>
-		<script src="SBLK_MAP_4.js"></script>
 	</body>
 </html>

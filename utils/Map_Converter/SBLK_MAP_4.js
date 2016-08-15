@@ -47,9 +47,10 @@ function SBZ4(JSONMapData){
 	newMap.matrices = JSONMapData.matrices;
 	newMap.dims = JSONMapData.dims;
 	var roomData1 = JSONMapData.roomData;
+	newMap.roomData = JSONMapData.roomData;
 	
-	//re-structures room data
-	var rx = 0;
+	//re-structures room data (totally broken...)
+	/*var rx = 0;
 	var ry = 0;
 	var ri = 0;
 	var prev = "nothing";
@@ -115,7 +116,7 @@ function SBZ4(JSONMapData){
 	//cleans the ri counter from room data
 	for (var i = 0; i < newMap.roomData.length; i++) {
 		delete newMap.roomData[i].ri;
-	}
+	}*/
 	
 	/* not working
 	//attempts to optimize room data
@@ -151,7 +152,7 @@ function SBZ4(JSONMapData){
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
-	document.getElementById("display").innerHTML = output;
+	document.getElementById("display").value = output;
 	console.log("4: " + newMap.tileData.length);
 	//return newMap;
 }

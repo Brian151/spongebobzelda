@@ -337,7 +337,7 @@ function SBZ3(JSONMapData){
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
-	document.getElementById("display").innerHTML = output;
+	document.getElementById("display").value = output;
 	console.log("3: " + newMap.tileData.length);
-	SBZ4(newMap);
+	//SBZ4(newMap);
 }

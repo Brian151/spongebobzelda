@@ -266,7 +266,7 @@ function SBZ2(JSONMapData){
 		objs[current].targetedForExtermination = true;
 	}
 	
-	//deletes the maked objects
+	//deletes the marked objects
 	for (var i = objs.length - 1; i >= 0; i--) {
 		var current = objs[i];
 		if (current.targetedForExtermination) {
@@ -278,7 +278,7 @@ function SBZ2(JSONMapData){
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
-	document.getElementById("display").innerHTML = output;
+	//document.getElementById("display").innerHTML = output;
 	//return newMap;
 	console.log("2: " + newMap.tileData.length);
 	SBZ3(newMap);

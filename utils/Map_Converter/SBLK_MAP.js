@@ -304,14 +304,21 @@ function SBZ1(xmlMapData){
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
-	document.getElementById("display").innerHTML = output; 
+	//document.getElementById("display").innerHTML = output; 
 	//return newMap;
 	console.log("1: " + newMap.tileData.length);
 	SBZ2(newMap);
 }
 
 var map1;
-loadXML("patric01a.xml");
+//loadXML("patric01a.xml");
+var mapsrc = document.getElementById("in");
+
+var parser = new DOMParser();
+function readXML() {
+	var map1 = parser.parseFromString(mapsrc.value,"text/xml");
+	SBZ1(map1);
+}
 
 //ref.
 function myFunction(xml) {
@@ -328,3 +335,22 @@ function myFunction(xml) {
   }
   document.getElementById("demo").innerHTML = table;
 }
+
+//more ref...
+/*var txt, parser, xmlDoc;
+txt = "<note>" +
+"<to>Tove</to>" +
+"<from>Jani</from>" +
+"<heading>Reminder</heading>" +
+"<body>Don't forget me this weekend!</body>" +
+"</note>";
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(txt,"text/xml");
+
+document.getElementById("to").innerHTML =
+xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+document.getElementById("from").innerHTML =
+xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+document.getElementById("message").innerHTML =
+xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;*/
