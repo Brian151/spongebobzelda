@@ -25,7 +25,11 @@ var BGGrid = function(parent,viewport,rows,cols,tw,th,img,settings) {
 	this.tY = 0;
 	this.rx = this.view.x + this.x;
 	this.ry = this.view.y + this.y;
+	//console.log(this.view.x);
+	//console.log(this.view.y);
 	this.translatePos();
+	//console.log(this.rx);
+	//console.log(this.ry);
 }
 BGGrid.prototype.translatePos = function() {
 	if (this.settings.minX) {
@@ -100,6 +104,12 @@ BGGrid.prototype.draw = function() {
 				if (t.draw) {
 					var tx2 = this.rx + (ix2 * this.tileWidth);
 					var ty2 = this.ry + (iy2 * this.tileHeight);
+					//console.log(this.rx); //errors here
+					//console.log(this.ry);
+					//console.log(ix2);
+					//console.log(iy2);
+					//console.log(tx2);
+					//console.log(ty2);
 					t.draw(tx2,ty2);
 				} else if (t.isImg) {
 					var tx2 = this.rx + (ix2 * this.tileWidth);

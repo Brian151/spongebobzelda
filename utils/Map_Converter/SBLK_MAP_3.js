@@ -1,11 +1,39 @@
+/*
+note: this is an array of polarity matrices.
+it was created based on a trend discovered in
+variants of the transform matrix, where the
+poles are always consistent for a certain angle.
+(including if it's been flipped, and which flip was performed)
+effectively, this should be able to translate any given matrix
+to meta-data.
+
+only 8 variants exist in SBLK:
+0 0
+1 90
+2 180
+3 270
+4 0 [f]
+5 90 [f]
+6 180 [f]
+7 270 [f]
+
+mb and mc are the only values that may ever be 0.
+*/
 var matrixLookup = [
 {"ma":null,"mb":null,"mc":null,"md":null,"name": 0},
-{"ma":6.123031769111885e-17, "mb":1, "mc":-1, "md":6.123031769111885e-17, "name":"1"},
-{"ma":-1.836909530733566e-16, "mb":-1, "mc":1, "md":-1.836909530733566e-16, "name":"3"},
-{"ma":-4.28612223837832e-16, "mb":-1, "mc":1, "md":-4.28612223837832e-16, "name":"3"},
-{"ma":1, "mb":0, "mc":0, "md":-1, "name":"5"},
-{"ma":-1, "mb":1.224606353822377e-16, "mc":-1.224606353822377e-16, "md":-1, "name":"2"}
-];
+{"ma":1,"mb":0,"mc":0,"md":1,"name": 0},
+{"ma":1,"mb":-1,"mc":1,"md":1,"name": 0},
+{"ma":1, "mb":1, "mc":-1, "md":1, "name":"1"},
+{"ma":-1, "mb":1, "mc":-1, "md":-1, "name":"2"},
+{"ma":-1, "mb":-1, "mc":1, "md":1, "name":"3"},
+{"ma":-1,"mb":0,"mc":0,"md":1,"name": 4},
+{"ma":-1,"mb":1,"mc":1,"md":1,"name": 4},
+{"ma":-1,"mb":-1,"mc":-1,"md":1,"name": 5},
+{"ma":1,"mb":-1,"mc":-1,"md":-1,"name": 6},
+{"ma":1,"mb":0,"mc":0,"md":-1,"name": 6},
+{"ma":1,"mb":1,"mc":1,"md":-1,"name": 7},
+]; 
+
 
 function SBZ3(JSONMapData){
 	var newMap = {
@@ -54,7 +82,7 @@ function SBZ3(JSONMapData){
 	var events = JSONMapData.objects.events;
 	var wandables = JSONMapData.objects.wandables;
 	var objs = JSONMapData.objects.objects;
-	newMap.matrices = JSONMapData.matrices;
+	//newMap.matrices = JSONMapData.matrices;
 	newMap.dims = JSONMapData.dims;
 	
 	//moves room data, and re-structures tile data
@@ -71,9 +99,23 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
+				break;
 			}
 		}
 		var newTile = curr.l + "." + mMeta;
@@ -95,17 +137,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.enemies.push(curr);
 	}
 	
@@ -123,17 +179,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.destructables.push(curr);
 	}
 	
@@ -151,17 +221,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.doors.push(curr);
 	}
 	
@@ -180,17 +264,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.puzzles.push(curr);
 	}
 	
@@ -209,17 +307,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.chests.push(curr);
 	}
 	
@@ -237,17 +349,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.characters.push(curr);
 	}
 	
@@ -265,17 +391,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.items.push(curr);
 	}
 	
@@ -293,17 +433,31 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.events.push(curr);
 	}
 
@@ -321,23 +475,37 @@ function SBZ3(JSONMapData){
 		var md = curr.md;
 		for (var i4 = 0; i4 < mLookup.length; i4++) {
 			var curr2 = mLookup[i4];
-			if(ma == curr2.ma && mb == curr2.mb && mc == curr2.mc && md == curr2.md) {
-				mDupe = true;
+			var mbz = (curr2.mb == 0);
+			var mcz = (curr2.mc == 0);
+			var man = (curr2.ma < 0);
+			var mbn = (curr2.mb < 0);
+			var mcn = (curr2.mc < 0);
+			var mdn = (curr2.md < 0);
+			var man2 = (ma < 0);
+			var mbn2 = (mb < 0);
+			var mcn2 = (mc < 0);
+			var mdn2 = (md < 0);
+			var mam = (man == man2)
+			var mbm = ( (mbn == mbn2) || ( mbz && (mb == 0)) );
+			var mcm = ( (mcn == mcn2) || ( mcz && (mc == 0)) );
+			var mdm = (mdn == mdn2);
+			if (mam && mbm && mcm && mdm) {
 				mMeta = curr2.name;
-				curr.mm = mMeta;
+				
 				delete curr.ma;
 				delete curr.mb;
 				delete curr.mc;
 				delete curr.md;
+				break;
 			}
 		}
-		
+		curr.mm = mMeta;
 		newMap.objects.wandables.push(curr);
 	}
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
 	document.getElementById("display").value = output;
-	console.log("3: " + newMap.tileData.length);
+	//console.log("3: " + newMap.tileData.length);
 	//SBZ4(newMap);
 }

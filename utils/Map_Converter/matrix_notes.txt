@@ -1,0 +1,128 @@
+//rotated 3 times
+matrix [ a:6.123233995736766e-17 b:1 c:-1 d:6.123233995736766e-17 ] ,rotated 1 times (90) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:-1 b:1.2246467991473532e-16 c:-1.2246467991473532e-16 d:-1 ] ,rotated 2 times (180) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:-1.8369701987210297e-16 b:-1 c:1 d:-1.8369701987210297e-16 ] ,rotated 3 times (270) degrees, flipped: (Hor 0 , Vert 0 ) times
+
+//identity
+!,!,!,! 0 [0]
+p,z,z,p 0 [0]
+//rotate
+p,p,n,p 1 [90]
+n,p,n,n 2 [180]
+n,n,p,n 3 [270]
+
+//rotated 4 more times
+matrix [ a:1 b:-2.4492935982947064e-16 c:2.4492935982947064e-16 d:1 ] ,rotated 4 times (360) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:3.061616997868383e-16 b:1 c:-1 d:3.061616997868383e-16 ] ,rotated 5 times (450) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:-1 b:3.67394039744206e-16 c:-3.67394039744206e-16 d:-1 ] ,rotated 6 times (540) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:-4.2862637970157366e-16 b:-1 c:1 d:-4.2862637970157366e-16 ] ,rotated 7 times (630) degrees, flipped: (Hor 0 , Vert 0 ) times
+
+//match rotate
+p,n,p,p 0 [0]
+p,p,n,p 1 [90]
+n,p,n,n 2 [180]
+n,n,p,n 3 [270]
+
+//flipped x and rotated 3 times
+matrix [ a:-1 b:0 c:0 d:1 ] ,rotated 0 times (0) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:-6.123233995736766e-17 b:-1 c:-1 d:6.123233995736766e-17 ] ,rotated 1 times (90) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:1 b:-1.2246467991473532e-16 c:-1.2246467991473532e-16 d:-1 ] ,rotated 2 times (180) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:1.8369701987210297e-16 b:1 c:1 d:-1.8369701987210297e-16 ] ,rotated 3 times (270) degrees, flipped: (Hor 1 , Vert 0 ) times
+
+//flipped x
+//angle0
+n,z,z,p 4 [0] f
+//rotate
+n,n,n,p 5 [90] f
+p,n,n,n 6 [180] f
+p,p,p,n 7 [270] f
+
+//rotated 4 more times
+matrix [ a:-1 b:2.4492935982947064e-16 c:2.4492935982947064e-16 d:1 ] ,rotated 4 times (360) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:-3.061616997868383e-16 b:-1 c:-1 d:3.061616997868383e-16 ] ,rotated 5 times (450) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:1 b:-3.67394039744206e-16 c:-3.67394039744206e-16 d:-1 ] ,rotated 6 times (540) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:4.2862637970157366e-16 b:1 c:1 d:-4.2862637970157366e-16 ] ,rotated 7 times (630) degrees, flipped: (Hor 1 , Vert 0 ) times
+
+//match flipped + rotated
+n,p,p,p 4 [0] f
+n,n,n,p 5 [90] f
+p,n,n,n 6 [180] f
+p,p,p,n 7 [270] f
+
+//flipped y and rotated 3 times
+matrix [ a:1 b:0 c:0 d:-1 ] ,rotated 0 times (0) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:6.123233995736766e-17 b:1 c:1 d:-6.123233995736766e-17 ] ,rotated 1 times (90) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:-1 b:1.2246467991473532e-16 c:1.2246467991473532e-16 d:1 ] ,rotated 2 times (180) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:-1.8369701987210297e-16 b:-1 c:-1 d:1.8369701987210297e-16 ] ,rotated 3 times (270) degrees, flipped: (Hor 0 , Vert 1 ) times
+
+//flipped y
+//angle 0
+p,z,z,n 6 [180] f
+//rotate 
+p,p,p,n 7 [270] f
+n,p,p,p 4 [0] f
+n,n,n,p 5 [90] f
+
+//rotated 4 more times
+matrix [ a:1 b:-2.4492935982947064e-16 c:-2.4492935982947064e-16 d:-1 ] ,rotated 4 times (360) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:3.061616997868383e-16 b:1 c:1 d:-3.061616997868383e-16 ] ,rotated 5 times (450) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:-1 b:3.67394039744206e-16 c:3.67394039744206e-16 d:1 ] ,rotated 6 times (540) degrees, flipped: (Hor 0 , Vert 1 ) times
+matrix [ a:-4.2862637970157366e-16 b:-1 c:-1 d:4.2862637970157366e-16 ] ,rotated 7 times (630) degrees, flipped: (Hor 0 , Vert 1 ) times
+
+//match flipped (y) + rotated
+p,n,n,n 6 [180] f
+p,p,p,n 7 [270] f
+n,p,p,p 4 [0] f
+n,n,n,p 5 [90] f
+
+//rotate 8 times, flip x rotate 8 times, flip y rotate 8 times (only log 8th rotate)
+matrix [ a:1 b:-4.898587196589413e-16 c:4.898587196589413e-16 d:1 ] ,rotated 8 times (720) degrees, flipped: (Hor 0 , Vert 0 ) times
+matrix [ a:-1 b:4.898587196589413e-16 c:4.898587196589413e-16 d:1 ] ,rotated 8 times (720) degrees, flipped: (Hor 1 , Vert 0 ) times
+matrix [ a:1 b:-4.898587196589413e-16 c:-4.898587196589413e-16 d:-1 ] ,rotated 8 times (720) degrees, flipped: (Hor 0 , Vert 1 ) times
+
+//default
+p,n,p,p 0 [0]
+//x flip
+n,p,p,p 4 [0] f
+//y flip
+p,n,n,n 6 [180] f
+
+//conlusions:
+
+//mat polarity table
+//identity
+!,!,!,! 0 [0]
+p,z,z,p 0 [0]
+p,n,p,p 0 [0]
+//rotate
+p,p,n,p 1 [90]
+n,p,n,n 2 [180]
+n,n,p,n 3 [270]
+//flip
+//angle0
+n,z,z,p 4 [0] f
+n,p,p,p 4 [0] f
+//rotate
+n,n,n,p 5 [90] f
+p,n,n,n 6 [180] f
+p,z,z,n 6 [180] f
+p,p,p,n 7 [270] f
+
+//to JSON
+{"ma":null,"mb":null,"mc":null,"md":null,"name": 0},
+{"ma":1,"mb":0,"mc":0,"md":1,"name": 0},
+{"ma":1,"mb":-1,"mc":1,"md":1,"name": 0},
+{"ma":1, "mb":1, "mc":-1, "md":1, "name":"1"},
+{"ma":-1, "mb":1, "mc":-1, "md":-1, "name":"2"},
+{"ma":-1, "mb":-1, "mc":1, "md":1, "name":"3"},
+{"ma":-1,"mb":0,"mc":0,"md":1,"name": 4},
+{"ma":-1,"mb":1,"mc":1,"md":1,"name": 4},
+{"ma":-1,"mb":-1,"mc":-1,"md":1,"name": 5},
+{"ma":1,"mb":-1,"mc":-1,"md":-1,"name": 6},
+{"ma":1,"mb":0,"mc":0,"md":-1,"name": 6},
+{"ma":1,"mb":1,"mc":1,"md":-1,"name": 7},
+
+
+
+
+

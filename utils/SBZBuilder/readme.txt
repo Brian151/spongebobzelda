@@ -7,7 +7,7 @@ extra technologies:
 unnamed HTML5 Game Library (also coded by Brian151)
 
 status:
-early dev, adding the most basic of the basic
+early dev, starting to add core features
 
 features:
 [scrollable BG grid]
@@ -19,14 +19,16 @@ move mouse close to edge of screen to scroll
 (format extremely WIP)
 internal structure and implementation currently very hacky
 [debug stuff]
-show tile coords of tile grid
-show tile coords of mouse relative to tile grid
+...
 [tilemap]
 prototype stage, currently randomly generated
 locked to 32x32 tles for now
 [editing]
-choose between 'brush' or erase
+choose between 'brush' or 'erase'
 choose between 4 different placeholder tiles
 
 next:
-asset selection menu for tiles
+make tile buttons change states, and respond only to single clicks...
+clean-up code...majorly...
+editing enemies
+importing converted sbz JSON map data

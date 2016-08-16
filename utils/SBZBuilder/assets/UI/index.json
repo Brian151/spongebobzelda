@@ -1,0 +1,66 @@
+{
+	"groups" : ["skin","btn"],
+	"preload" : true,
+	"assets" : [ 
+		{
+			"id" : "BG",
+			"file" : "skin/LBGuide.png",
+			"group" : "skin",
+			"type" : "image"
+		},
+		{
+			"id" : "appSkin",
+			"file" : "skin/LBMain.png",
+			"group" : "skin",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile0",
+			"file" : "menuBtns/tile/testTile0.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile0_on",
+			"file" : "menuBtns/tile/testTile0_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile1",
+			"file" : "menuBtns/tile/testTile1.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile1_on",
+			"file" : "menuBtns/tile/testTile1_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile2",
+			"file" : "menuBtns/tile/testTile2.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile2_on",
+			"file" : "menuBtns/tile/testTile2_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile3",
+			"file" : "menuBtns/tile/testTile3.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "testTile3_on",
+			"file" : "menuBtns/tile/testTile3_on.png",
+			"group" : "btn",
+			"type" : "image"
+		}
+	]
+}

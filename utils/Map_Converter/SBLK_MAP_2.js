@@ -280,6 +280,6 @@ function SBZ2(JSONMapData){
 	//console.log(output);
 	//document.getElementById("display").innerHTML = output;
 	//return newMap;
-	console.log("2: " + newMap.tileData.length);
+	//console.log("2: " + newMap.tileData.length);
 	SBZ3(newMap);
 }

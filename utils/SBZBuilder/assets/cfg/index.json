@@ -1,0 +1,24 @@
+{
+	"groups" : ["config"],
+	"preload" : true,
+	"assets" : [ 
+		{
+			"id" : "btns_cfg",
+			"file" : "btns.json",
+			"group" : "config",
+			"type" : "txt"
+		},
+		{
+			"id" : "viewports_cfg",
+			"file" : "vp.json",
+			"group" : "config",
+			"type" : "txt"
+		},
+		{
+			"id" : "grids_cfg",
+			"file" : "grids.json",
+			"group" : "config",
+			"type" : "txt"
+		}
+	]
+}

@@ -60,7 +60,7 @@ function SBZ1(xmlMapData){
 	//parses the main map
 	for (var i = 0; i < map.length; i++) {
 		var cells = map[i].getElementsByTagName("c");
-		console.log("row " + i + ": " + cells.length);
+		//console.log("row " + i + ": " + cells.length);
 		for (var i2 = 0; i2 < cells.length; i2++){
 			var cell = cells[i2];
 			if(cell.hasChildNodes()) {
@@ -306,7 +306,7 @@ function SBZ1(xmlMapData){
 	//console.log(output);
 	//document.getElementById("display").innerHTML = output; 
 	//return newMap;
-	console.log("1: " + newMap.tileData.length);
+	//console.log("1: " + newMap.tileData.length);
 	SBZ2(newMap);
 }
 

@@ -232,6 +232,7 @@ purpose is for handling blank tiles.
 Matrices were converted to meta-id's.
 Rooms were given their own sections.
 Lenth of sample file in characters: 8360, excluding the matrix lookup.
+patch : matrix data now omitted, as no longer required
 
 [dims]
 contains a w property and an h property, for map width and height, respectively.
