@@ -26,7 +26,7 @@ Game.prototype.init = function(mainCanvas) {
 		width : 100,
 		height : 253
 	};
-	this.currTile = 0;
+	this.currTile = {};
 	this.editMode = "brush";
 	this.tileBank = [];
 	//this.grid = new BGGrid(this,this.x,this.y); //was -400,-200
@@ -52,6 +52,7 @@ Game.prototype.tick = function(){
 			for (var i=0; i < 4; i++) {
 				this.tileBank.push(this.assets.requestAssetFromLib("tiles","testTiles","testTile" + i,"image"));
 			}
+			var tDat = JSON.parse(this.assets.requestAssetFromLib("tiles","testTiles","testTiles_dat","txt"));
 			//console.log(this.tileBG.src);
 			var maxX = (36 * 50) - ((8 * 50) - 0);
 			var maxY = (36 * 50) - ((5 * 50) - 10);
@@ -66,11 +67,13 @@ Game.prototype.tick = function(){
 					var r = Math.floor(Math.random() * 8);
 					//console.log(r);
 					if (r > 3) {
-						//console.log(r);
-						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,this.tileBank[r-4]);
+						//console.log(r);                     parent,x,y,w,h,dat,type
+						var tType = "testTile" + (r-4);
+						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,tDat,tType);
 					}
 				}
 			}
+			this.tileDat = tDat;
 			var ic = 0;
 			for (var iy=0; iy < this.menuGrid.rows; iy++) {
 				for (var ix=0; ix < this.menuGrid.cols; ix++) {
@@ -80,7 +83,7 @@ Game.prototype.tick = function(){
 					var btn_on = this.assets.requestAssetFromLib("UI","btn",btnDat.btn + "_on","image");
 					//console.log(btn_off.src);
 					//console.log(btn_on.src);
-					this.menuGrid.tiles[ix][iy] = new MenuBtn(this,btnDat.id,btn_off,btn_on);
+					this.menuGrid.tiles[ix][iy] = new MenuBtn(this,btnDat.id,btn_off,btn_on,btnDat.g);
 					ic++;
 				}
 			}
@@ -124,7 +127,9 @@ Game.prototype.tick = function(){
 		if (this.mouseTPos.e == 1) {
 			if (this.controller.mouseState.down) {
 				if (this.editMode == "brush") {
-					this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = new Tile(this,ix,iy,50,50,this.tileBank[this.currTile]);
+					var g = this[this.currTile.g];
+					var id = this.currTile.id;
+					this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = new Tile(this,ix,iy,50,50,g,id);
 				} else if (this.editMode == "erase") {
 					this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = {draw:function(){}};
 				}
@@ -132,7 +137,12 @@ Game.prototype.tick = function(){
 		}
 		if (this.mouseTPos.e == 2) {
 			if (this.controller.mouseState.down) {
-				this.setCurrentTile(this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].id);
+				this.setCurrentTile({
+				id:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].id,
+				g:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].g
+				});
+				//console.log(this.currTile.g);
+				//console.log(this.currTile.id);
 				this.currentAsset = this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].imgs.off;
 			}
 		}

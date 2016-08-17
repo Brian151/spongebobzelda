@@ -1,6 +1,7 @@
-function MenuBtn(parent,id,img,img2) {
+function MenuBtn(parent,id,img,img2,g) {
 	this.parent = parent;
 	this.id = id;
+	this.g = g;
 	this.imgs = {
 		off : img,
 		on : img2

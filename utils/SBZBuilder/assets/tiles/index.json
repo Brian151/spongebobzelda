@@ -25,6 +25,18 @@
 			"file" : "testing/testTile3.png",
 			"group" : "testTiles",
 			"type" : "image"
+		},
+		{
+			"id" : "testTiles",
+			"file" : "testing/testTileSet.png",
+			"group" : "testTiles",
+			"type" : "image"
+		},
+		{
+			"id" : "testTiles_dat",
+			"file" : "testing/tiles.json",
+			"group" : "testTiles",
+			"type" : "txt"
 		}
 	]
 }

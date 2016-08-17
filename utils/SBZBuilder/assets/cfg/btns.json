@@ -1,8 +1,8 @@
 {
 	"btns_tile" : [
-		{"id":0,"btn":"testTile0"},
-		{"id":1,"btn":"testTile1"},
-		{"id":2,"btn":"testTile2"},
-		{"id":3,"btn":"testTile3"}
+		{"id":"testTile0","btn":"testTile0","g":"tileDat"},
+		{"id":"testTile1","btn":"testTile1","g":"tileDat"},
+		{"id":"testTile2","btn":"testTile2","g":"tileDat"},
+		{"id":"testTile3","btn":"testTile3","g":"tileDat"}
 	]
 }

@@ -19,6 +19,12 @@
 			"file" : "grids.json",
 			"group" : "config",
 			"type" : "txt"
+		},
+		{
+			"id" : "offsets_cfg",
+			"file" : "offsets.json",
+			"group" : "config",
+			"type" : "txt"
 		}
 	]
 }
