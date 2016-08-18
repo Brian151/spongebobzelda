@@ -25,6 +25,12 @@
 			"file" : "offsets.json",
 			"group" : "config",
 			"type" : "txt"
+		},
+		{
+			"id" : "main_cfg",
+			"file" : "config.json",
+			"group" : "config",
+			"type" : "txt"
 		}
 	]
 }

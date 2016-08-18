@@ -1,5 +1,6 @@
 {
 	"img" : "testTiles",
+	"g" : "testTiles",
 	"dims" : {
 		"w" : 50,
 		"h" : 50

@@ -1,0 +1,15 @@
+{
+	"map" : {
+		"w" : 36,
+		"h" : 36
+	},
+	"gameBranch" : [
+		"tileSets"
+	],
+	"tileSets" : [
+		{"branch":"tileSets","id":"tDat","g":"testTiles","id2":"testTiles_dat"},
+		{"branch":"tileSets","id":"tDatD1","g":"tiles","id2":"dungeon1Tiles_dat"}
+	],
+	"btnSets" : [
+	]
+}

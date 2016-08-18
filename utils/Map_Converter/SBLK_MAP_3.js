@@ -19,13 +19,14 @@ only 8 variants exist in SBLK:
 
 mb and mc are the only values that may ever be 0.
 */
+
 var matrixLookup = [
 {"ma":null,"mb":null,"mc":null,"md":null,"name": 0},
 {"ma":1,"mb":0,"mc":0,"md":1,"name": 0},
 {"ma":1,"mb":-1,"mc":1,"md":1,"name": 0},
 {"ma":1, "mb":1, "mc":-1, "md":1, "name": 1},
 {"ma":-1, "mb":1, "mc":-1, "md":-1, "name": 2},
-{"ma":-1, "mb":-1, "mc":1, "md":1, "name": 3},
+{"ma":-1, "mb":-1, "mc":1, "md":-1, "name": 3}, // neg, neg, pos, NEG! read your dang notes right...
 {"ma":-1,"mb":0,"mc":0,"md":1,"name": 4},
 {"ma":-1,"mb":1,"mc":1,"md":1,"name": 4},
 {"ma":-1,"mb":-1,"mc":-1,"md":1,"name": 5},
