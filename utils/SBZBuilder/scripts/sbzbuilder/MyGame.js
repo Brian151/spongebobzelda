@@ -12,6 +12,7 @@ Game.prototype.init = function(mainCanvas) {
 	this.assets.loadAssetLib("UI");
 	this.assets.loadAssetLib("tiles");
 	this.assets.loadAssetLib("cfg");
+	this.assets.loadAssetLib("maps");
 	console.log("SBZBuilder Init!");
 	//viewports...
 	this.viewPortMap = {
@@ -48,11 +49,14 @@ Game.prototype.tick = function(){
 			this.UISkin = this.assets.requestAssetFromLib("UI","skin","appSkin","image");
 			this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.editMode,"image");
 			var btnsCfg = this.assets.requestAssetFromLib("cfg","config","btns_cfg","txt");
+			var mapTest = JSON.parse(this.assets.requestAssetFromLib("maps","maps","map0","txt"));
 			btnsCfg = JSON.parse(btnsCfg).btns_tile;
+			//console.log(mapTest.tileData[0].toString().split(".").join(" , "));
 			for (var i=0; i < 4; i++) {
 				this.tileBank.push(this.assets.requestAssetFromLib("tiles","testTiles","testTile" + i,"image"));
 			}
 			var tDat = JSON.parse(this.assets.requestAssetFromLib("tiles","testTiles","testTiles_dat","txt"));
+			var tDatD1 = JSON.parse(this.assets.requestAssetFromLib("tiles","tiles","dungeon1Tiles_dat","txt"));
 			//console.log(this.tileBG.src);
 			var maxX = (36 * 50) - ((8 * 50) - 0);
 			var maxY = (36 * 50) - ((5 * 50) - 10);
@@ -62,7 +66,7 @@ Game.prototype.tick = function(){
 			this.grid = new BGGrid(this,this.viewPortMap,2,2,600,300,this.UIBG,gridSettings);
 			this.tileGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
 			this.menuGrid = new BGGrid(this,this.viewPortMenu,2,Math.ceil(btnsCfg.length/2),50,50,false,menuGridSettings);
-			for (var ix=0; ix < this.tileGrid.tiles.length; ix++) {
+			/*for (var ix=0; ix < this.tileGrid.tiles.length; ix++) {
 				for (var iy=0; iy < this.tileGrid.tiles[ix].length; iy++) {
 					var r = Math.floor(Math.random() * 8);
 					//console.log(r);
@@ -71,6 +75,33 @@ Game.prototype.tick = function(){
 						var tType = "testTile" + (r-4);
 						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,tDat,tType);
 					}
+				}
+			}*/
+			var ic2 = 0;
+			for (var iy=0; iy < this.tileGrid.rows; iy++) {
+				for (var ix=0; ix < this.tileGrid.cols; ix++) {
+					if (ic2 >= mapTest.tileData.length) break;
+					var curr = mapTest.tileData[ic2].toString();
+					var curr2 = curr.split(".");
+					var t = curr2[0];
+					var m = 0;
+					if (curr2.length >= 2) {
+						m = Number(curr2[1]);
+						//console.log("m orig : " + m);
+						if (m >= 4) m -= 4;
+						//console.log("m new : " + m);
+					}
+					for (var i3 = 0; i3 < mapTest.assetLexicon.length; i3++) {
+						if (mapTest.assetLexicon[i3].id == t) {
+							t = mapTest.assetLexicon[i3].l;
+							break;
+						}
+					}
+					if (t != "BLANK_TILE") {
+						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,tDatD1,t);
+						this.tileGrid.tiles[ix][iy].setMeta(m);
+					}
+					ic2++;
 				}
 			}
 			this.tileDat = tDat;

@@ -1,0 +1,93 @@
+{
+	"img" : "tilesDungeonlv1",
+	"g" : "tiles",
+	"dims" : {
+		"w" : 50,
+		"h" : 50
+	},
+	"tiles" : {
+		"mcLBTileLairCorner00" : {
+			"r" : 0
+		},
+		"mcLBTileLairTopWall00" : {
+			"r" : 1
+		},
+		"mcLBTileLairCorner03" : {
+			"r" : 2
+		},
+		"mcLBTileLairBottomWall00" : {
+			"r" : 5
+		},
+		"mcLBTileLairFloor00" : {
+			"r" : 6
+		},
+		"mcLBTileLairCorner01" : {
+			"r" : 3
+		},
+		"mcLBTileLairCorner02" : {
+			"r" : 4
+		},
+		"mcLBTileLairCeilling00" : {
+			"r" : 7
+		},
+		"mcLBObjectRoomBlockLvl1" : {
+			"r" : 8
+		}
+	},
+	"regions" : [
+		{
+			"x" : 0,
+			"y" : 0,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 0,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 2,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 2,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 4,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 4,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 6,
+			"w" : 1,
+			"h" : 1
+		},
+		{
+			"x" : 1,
+			"y" : 6,
+			"w" : 1,
+			"h" : 1
+		},
+		{
+			"x" : 2,
+			"y" : 6,
+			"w" : 1,
+			"h" : 1
+		}
+	]
+}

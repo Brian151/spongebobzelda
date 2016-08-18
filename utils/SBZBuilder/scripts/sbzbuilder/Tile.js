@@ -6,6 +6,7 @@ var Tile = function(parent,x,y,w,h,dat,type) {
 	this.height = h;
 	this.subTypes = [];
 	//console.log(type);
+	//console.log(JSON.stringify(dat));
 	var r = dat.regions[dat.tiles[type].r];
 	var tempWidth = dat.dims.w;
 	var tempHeight = dat.dims.h;
@@ -24,7 +25,8 @@ var Tile = function(parent,x,y,w,h,dat,type) {
 	this.currSub = this.subTypes[0];
 	this.meta = 0;
 	//console.log(type + " | " + tempX + " , " + tempY + "   " + JSON.stringify(this.subTypes));
-	this.img = this.parent.assets.requestAssetFromLib("tiles","testTiles",dat.img,"image");
+	this.img = this.parent.assets.requestAssetFromLib("tiles",dat.g,dat.img,"image");
+	//console.log(this.img.src);
 }
 Tile.prototype.draw = function(x,y) {
 	//this.parent.renderer.ctx.drawImage(this.img,x,y);
@@ -44,6 +46,7 @@ Tile.prototype.setMeta = function(m) {
 	var tM = m;
 	if (tM >= this.subTypes.length) tM = 0;
 	this.meta = tM;
+	//console.log(tM);
 	this.currSub = this.subTypes[this.meta];
 }
 Tile.prototype.flip = function(mode){

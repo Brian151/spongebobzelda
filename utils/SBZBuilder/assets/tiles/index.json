@@ -1,5 +1,5 @@
 {
-	"groups" : ["testTiles"],
+	"groups" : ["testTiles","tiles"],
 	"preload" : true,
 	"assets" : [ 
 		{
@@ -36,6 +36,18 @@
 			"id" : "testTiles_dat",
 			"file" : "testing/tiles.json",
 			"group" : "testTiles",
+			"type" : "txt"
+		},
+		{
+			"id" : "tilesDungeonlv1",
+			"file" : "tilesDungeonlvl1.png",
+			"group" : "tiles",
+			"type" : "image"
+		},
+		{
+			"id" : "dungeon1Tiles_dat",
+			"file" : "tiles.json",
+			"group" : "tiles",
 			"type" : "txt"
 		}
 	]

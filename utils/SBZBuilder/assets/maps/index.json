@@ -1,0 +1,12 @@
+{
+	"groups" : ["maps"],
+	"preload" : true,
+	"assets" : [ 
+		{
+			"id" : "map0",
+			"file" : "patrick01a.sbz",
+			"group" : "maps",
+			"type" : "txt"
+		}
+	]
+}
