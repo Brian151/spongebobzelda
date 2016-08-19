@@ -68,44 +68,160 @@
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
 			"group" : "btn",
 			"type" : "image"
-		},{
+		},
+		{
 			"id" : "testTile3_on",
 			"file" : "menuBtns/tile/testTile_btns/testTile3_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t0",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile0.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t0_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile0_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t1",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile1.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t1_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile1_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t2",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile2.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t2_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile2_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t3",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile3.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t3_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile3_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t4",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile4.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t4_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile4_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t5",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile5.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t5_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile5_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t6",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile6.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t6_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile6_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t7",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile7.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t7_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile7_on.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t8",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile8.png",
+			"group" : "btn",
+			"type" : "image"
+		},
+		{
+			"id" : "btn_DLvl1_t8_on",
+			"file" : "menuBtns/tile/dungeonLvl1Tiles_btns/btnTile8_on.png",
 			"group" : "btn",
 			"type" : "image"
 		}

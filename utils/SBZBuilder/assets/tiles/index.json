@@ -1,31 +1,7 @@
 {
 	"groups" : ["testTiles","tiles"],
 	"preload" : true,
-	"assets" : [ 
-		{
-			"id" : "testTile0",
-			"file" : "testing/testTile0.png",
-			"group" : "testTiles",
-			"type" : "image"
-		},
-		{
-			"id" : "testTile1",
-			"file" : "testing/testTile1.png",
-			"group" : "testTiles",
-			"type" : "image"
-		},
-		{
-			"id" : "testTile2",
-			"file" : "testing/testTile2.png",
-			"group" : "testTiles",
-			"type" : "image"
-		},
-		{
-			"id" : "testTile3",
-			"file" : "testing/testTile3.png",
-			"group" : "testTiles",
-			"type" : "image"
-		},
+	"assets" : [
 		{
 			"id" : "testTiles",
 			"file" : "testing/testTileSet.png",

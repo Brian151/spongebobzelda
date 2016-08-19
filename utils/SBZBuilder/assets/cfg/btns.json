@@ -6,14 +6,14 @@
 		{"id":"testTile3","btn":"testTile3","g":"tileDat"}
 	],
 	"btns_tile_dungeon1" : [
-		{"id":"mcLBTileLairCorner00","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairTopWall0","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairCorner03","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairBottomWall00","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairFloor00","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairCorner01","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairCorner02","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBTileLairCeiling00","btn":"testTile0","g":"tileDatD1"},
-		{"id":"mcLBObjectRoomBlockLvl1","btn":"testTile0","g":"tileDatD1"}
+		{"id":"mcLBTileLairCorner00","btn":"btn_DLvl1_t0","g":"tileDatD1"},
+		{"id":"mcLBTileLairTopWall00","btn":"btn_DLvl1_t1","g":"tileDatD1"},
+		{"id":"mcLBTileLairCorner03","btn":"btn_DLvl1_t2","g":"tileDatD1"},
+		{"id":"mcLBTileLairCorner01","btn":"btn_DLvl1_t3","g":"tileDatD1"},
+		{"id":"mcLBTileLairCorner02","btn":"btn_DLvl1_t4","g":"tileDatD1"},
+		{"id":"mcLBTileLairBottomWall00","btn":"btn_DLvl1_t5","g":"tileDatD1"},
+		{"id":"mcLBTileLairFloor00","btn":"btn_DLvl1_t6","g":"tileDatD1"},
+		{"id":"mcLBTileLairCeilling00","btn":"btn_DLvl1_t7","g":"tileDatD1"},
+		{"id":"mcLBObjectRoomBlockLvl1","btn":"btn_DLvl1_t8","g":"tileDatD1"}
 	]
 }

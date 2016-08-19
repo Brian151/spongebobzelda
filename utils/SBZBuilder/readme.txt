@@ -31,15 +31,14 @@ I've known of this for a while, as it affected me when making the minimap tool.
 I know of no way to resolve this, short of manually editing each and every afflicted map.}
 [editing]
 choose between 'brush' or 'erase'
-choose between 4 different placeholder tiles
+choose any of the tiles from epsiode 1 dungeon tileset
 [import]
 tiles only
 hard-coded to patrick01a.sbz
 (note : map data entirely different format than original map, 
 DO NOT COPY INTO DATA FOLDER)
 next:
-remove original individual test tiles
-tile menu for dungeon lvl1 tiles
 make tile buttons change states, and respond only to single clicks...
 clean-up code...majorly...
 editing enemies
+button class changes

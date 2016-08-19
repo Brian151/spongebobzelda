@@ -50,11 +50,9 @@ Game.prototype.tick = function(){
 			this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.editMode,"image");
 			var btnsCfg = this.assets.requestAssetFromLib("cfg","config","btns_cfg","txt");
 			var mapTest = JSON.parse(this.assets.requestAssetFromLib("maps","maps","map0","txt"));
-			btnsCfg = JSON.parse(btnsCfg).btns_tile;
+			btnsCfg = JSON.parse(btnsCfg).btns_tile_dungeon1;
+			//console.log(Math.ceil(btnsCfg.length/2));
 			//console.log(mapTest.tileData[0].toString().split(".").join(" , "));
-			for (var i=0; i < 4; i++) {
-				this.tileBank.push(this.assets.requestAssetFromLib("tiles","testTiles","testTile" + i,"image"));
-			}
 			var tDat = JSON.parse(this.assets.requestAssetFromLib("tiles","testTiles","testTiles_dat","txt"));
 			var tDatD1 = JSON.parse(this.assets.requestAssetFromLib("tiles","tiles","dungeon1Tiles_dat","txt"));
 			//console.log(this.tileBG.src);
@@ -65,7 +63,7 @@ Game.prototype.tick = function(){
 			var menuGridSettings = {minX:true,minY:true,maxW:2,maxH:6};
 			this.grid = new BGGrid(this,this.viewPortMap,2,2,600,300,this.UIBG,gridSettings);
 			this.tileGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
-			this.menuGrid = new BGGrid(this,this.viewPortMenu,2,Math.ceil(btnsCfg.length/2),50,50,false,menuGridSettings);
+			this.menuGrid = new BGGrid(this,this.viewPortMenu,Math.ceil(btnsCfg.length/2),2,50,50,false,menuGridSettings);
 			/*for (var ix=0; ix < this.tileGrid.tiles.length; ix++) {
 				for (var iy=0; iy < this.tileGrid.tiles[ix].length; iy++) {
 					var r = Math.floor(Math.random() * 8);
@@ -105,6 +103,7 @@ Game.prototype.tick = function(){
 				}
 			}
 			this.tileDat = tDat;
+			this.tileDatD1 = tDatD1;
 			var ic = 0;
 			for (var iy=0; iy < this.menuGrid.rows; iy++) {
 				for (var ix=0; ix < this.menuGrid.cols; ix++) {
