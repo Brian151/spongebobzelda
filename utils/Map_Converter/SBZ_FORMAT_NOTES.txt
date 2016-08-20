@@ -36,7 +36,7 @@ The length of the sample file was 1188.
 =[intermediate]=
 However Flash stores Byte Arrays.
 The length of this form, in bytes is unknown.
-Technically, the bite array is compressed or decompressed, depending on whether the map
+Technically, the byte array is compressed or decompressed, depending on whether the map
 is being read from, or written to.
 
 =[XML]=
@@ -253,10 +253,10 @@ The meta-id scheme is the same as it was for tiles.
 
 =[2.0]=
 Legacy support (by myself, anyways) , dropped.
-Re-structured the room data. {FEATURE REMOVED... NOT WORKING}
+Re-structured the room data.
 A converter was created to update 1.7 room data to 2.0 room data.
-This converter is by no means efficient.
 Length of example file in characters: 5702 (again, omitting the matrix data)
+version skipped due to converter having serious bugs, and thus being re-written entirely.
 
 [roomData]
 MAJOR OVERHAUL
@@ -267,5 +267,11 @@ Is now an array of JSON objects with following structure:
 	y2: greatest y pos of room, int
 	reg: array of region objects, easily enables rooms to be non-rectangular, 
 	although regions are rectangles. Region objects contain the same attributes
-	as room objects, minus the reg array. Thes attributes also serve the same
+	as room objects, minus the reg array. These attributes also serve the same
 	purpose, except they pertain to the specific region, and not its parent room.
+	
+=[2.0.5]=
+Totally re-wrote room data converter
+Rooms are now stored in most optimized format possible (via automatic conversion, that is)
+Format is 100% identical to version 2.0
+Length of sample file in characters : 4892

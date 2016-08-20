@@ -7,10 +7,10 @@ function SBZ4(JSONMapData){
 				"day" : "???" ,
 				"year" : "2008",
 			},
-			"version" : 2.0,
+			"version" : 2.0.5,
 			"comment1" : "one of the original maps, now available as JSON",
 			"comment2" : "legacy suppport is dropped",
-			"comment3" : "Room data is re-structured, although horribly unoptimized"
+			"comment3" : "Room data is re-structured"
 		},
 		"dims": {
 			"w" : 0,
@@ -48,111 +48,147 @@ function SBZ4(JSONMapData){
 	newMap.dims = JSONMapData.dims;
 	var roomData1 = JSONMapData.roomData;
 	newMap.roomData = JSONMapData.roomData;
+	newMap.rD2 = [];
+	var tempR = {iDs:[]};
 	
-	//re-structures room data (totally broken...)
-	/*var rx = 0;
-	var ry = 0;
-	var ri = 0;
-	var prev = "nothing";
-	for (var i = 0; i < roomData1.length; i++) {
+	//room data 2D
+	//2D array to easily look-up room id's as x and y
+	var r2D = [];
+	for (var i=0; i < 36; i++) {
+		r2D.push([]);
+		for (var i2=0; i2 < 36; i2++) {
+			r2D[i].push(-1);
+		}
+	}
+	
+	//re-structures room data (what a pain...)
+	
+	//finds room bounding boxes
+	var x = 0;
+	var y = 0;
+	for (var i=0; i < roomData1.length; i++) {
+		if (!(i % 36) && i > 0) {
+			//console.log("modulo width!");
+			x = 0;
+			y++;
+		}
 		var curr = roomData1[i];
-		var fR2 = false;
-		var modu = i % newMap.dims.w;
-		if (i > 0 && modu == 0){
-			rx = 0;
-			ry++;
-			prev = "row";
-		}
-		if (curr >= 0) {
-			var foundRoom = false;
-			fR2 = true;
-			for (var i2 = 0; i2 < newMap.roomData.length; i2++) {
-				if (newMap.roomData[i2].id == curr) {
-					foundRoom = true;
-					if (rx < newMap.roomData[i2].x) {
-						newMap.roomData[i2].x = rx;
-					}
-					if (rx > newMap.roomData[i2].x2) {
-						newMap.roomData[i2].x2 = rx;
-					}
-					if (ry < newMap.roomData[i2].y) {
-						newMap.roomData[i2].y = ry;
-					}
-					if (ry > newMap.roomData[i2].y2) {
-						newMap.roomData[i2].y2 = ry;
-					}
-					if (curr != prev) {
-						newMap.roomData[i2].ri++;
-						var nZ = {
-							"x" : rx,
-							"y" : ry,
-							"x2" : rx,
-							"y2" : ry
-						}; //nZ.t = false;
-						newMap.roomData[i2].reg.push(nZ);
-					}
-					ri = newMap.roomData[i2].ri;
-					newMap.roomData[i2].reg[ri].x2 = rx;
-				}
+		if (curr != -1) {
+			if (!tempR["rm_" + curr]) {
+				tempR["rm_" + curr] = {x:x,y:y,x2:x,y2:y};
+				tempR.iDs.push(curr);
+			} else {
+				if (x < tempR["rm_" + curr].x) tempR["rm_" + curr].x = x;
+				if (y < tempR["rm_" + curr].y) tempR["rm_" + curr].y = y;
+				if (x > tempR["rm_" + curr].x2) tempR["rm_" + curr].x2 = x;
+				if (y > tempR["rm_" + curr].y2) tempR["rm_" + curr].y2 = y;
 			}
-			if (!foundRoom && fR2) {
-				var nRoom = {"id":curr , "x":rx , "y":ry , "x2":rx , "y2":ry , "reg":[]};
-				ri = 0;
-				var nZ2 = {
-					"x" : rx,
-					"y" : ry,
-					"x2" : rx,
-					"y2" : ry,
-				}; //nZ2.t = false;
-				nRoom.reg.push(nZ2);
-				nRoom.ri = ri;
-				newMap.roomData.push(nRoom);
-			}
-			
 		}
-		prev = curr;
+		r2D[y][x] = curr;
+		x++;
 	}
 	
-	//cleans the ri counter from room data
-	for (var i = 0; i < newMap.roomData.length; i++) {
-		delete newMap.roomData[i].ri;
-	}*/
+	//writes room bounding boxes to new room data section
+	for (var i=0; i < tempR.iDs.length; i++) {
+		var iD = tempR.iDs[i];
+		var curr = tempR["rm_" + iD];
+		curr.id = iD;
+		newMap.rD2.push(curr);
+	}
 	
-	/* not working
-	//attempts to optimize room data
-	for (var i = 0; i < newMap.roomData.length; i++) {
-		var curr = newMap.roomData[i];
-		for (var i2; i2 < curr.reg.length; i2++) {
-			var curr2 = curr.reg[i2];
-			var x0 = curr2.x;
-			var y1 = curr2.y + 1;
-			var xMAX = curr2.x2;
-			if (!curr2.t) {
-				for (var i3 = 0; i3 < curr.reg.length; i3++) {
-					var curr3 = curr.reg[i3];
-					if (curr3.x == x0 && curr3.y == y1 && curr3.x2 == xMAX && !curr3.t) {
-						curr3.t = true;
-						curr2.y2 = curr3.y2;
-					}
+	//initial conversion, creates regions 1x1 tiles in length cuz directly making 
+	//a horizontal strip is apparently impossible... >.>
+	for(var i=0; i < newMap.rD2.length; i++) {
+		var curr = newMap.rD2[i];
+		curr.regs = [];
+		var id = curr.id;
+		for (var iy =curr.y; iy < curr.y2+1; iy++) {
+			for(var ix=curr.x; ix < curr.x2+1; ix++) {
+				curr2 = r2D[iy][ix];
+				//console.log(curr2 + " : " + ix + " , " + iy);
+				if (curr2 == id) {
+					curr.regs.push({x:ix,y:iy,x2:ix,y2:iy});
 				}
 			}
 		}
 	}
 	
-	for (var i = 0; i < newMap.roomData.length; i++) {
-		var curr = newMap.roomData[i].reg;
-		for (var i2 = curr.length - 1; i2 >= 0; i2--) {
-			var curr2 = curr[i2];
-			if (curr2.t) {
-				curr.splice(i2,1);
+	//don't need 2D room array anymore...
+	r2D = [];
+	var rD3 = [];
+	
+	//convert 1x1 tile regions to horizontal strip regions...
+	for(var i=0; i < newMap.rD2.length; i++) {
+		var curr = newMap.rD2[i];
+		for (var i2=0; i2 < curr.regs.length; i2++) {
+			var curr2 = curr.regs[i2];
+			if (!curr2.p) {
+				curr2.p = true;
+				for(var i3=0; i3 < curr.regs.length; i3++) {
+					var curr3 = curr.regs[i3];
+					var nextX = curr2.x2 + 1;
+					if (!curr3.p) {
+						if ( 
+							(curr3.y == curr2.y) &&
+							(curr3.x == nextX)
+						) {
+							curr3.p = true;
+							curr2.x2++;
+						}
+					}
+				}
+				rD3.push(curr2);
 			}
 		}
+		curr.regs = rD3;
+		rD3 = [];
 	}
-	*/
+	
+	//combine compatible horizontal strips
+	for(var i=0; i < newMap.rD2.length; i++) {
+		var curr = newMap.rD2[i];
+		for (var i2=0; i2 < curr.regs.length; i2++) {
+			var curr2 = curr.regs[i2];
+			if (!curr2.p2) {
+				curr2.p2 = true;
+				for(var i3=0; i3 < curr.regs.length; i3++) {
+					var curr3 = curr.regs[i3];
+					var nextY = curr2.y2 + 1;
+					if (!curr3.p2) {
+						if ( 
+							(curr3.y == nextY) &&
+							(curr3.x == curr2.x) &&
+							(curr3.x2 == curr2.x2)
+						) {
+							curr3.p2 = true;
+							curr2.y2++;
+						}
+					}
+				}
+				rD3.push(curr2);
+			}
+		}
+		curr.regs = rD3;
+		rD3 = [];
+	}
+	
+	//remove p and p2 markers from room region data
+	for(var i=0; i < newMap.rD2.length; i++) {
+		var curr = newMap.rD2[i];
+		for (var i2=0; i2 < curr.regs.length; i2++) {
+			var curr2 = curr.regs[i2];
+			delete curr2.p;
+			delete curr2.p2;
+		}
+	}
+	
+	//replace old room data and remove the new room data section
+	newMap.roomData = newMap.rD2;
+	delete newMap.rD2;
 	
 	var output = JSON.stringify(newMap);
 	//console.log(output);
 	document.getElementById("display").value = output;
-	console.log("4: " + newMap.tileData.length);
+	//console.log("4: " + newMap.tileData.length);
 	//return newMap;
 }
