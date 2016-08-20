@@ -30,7 +30,6 @@ Game.prototype.init = function(mainCanvas) {
 	this.currTile = {};
 	this.editMode = "brush";
 	this.tileBank = [];
-	//this.grid = new BGGrid(this,this.x,this.y); //was -400,-200
 }
 Game.prototype.setEditMode = function(mode){
 	this.editMode = mode;
@@ -44,18 +43,15 @@ Game.prototype.tick = function(){
 	if (this.state == "init"){
 		if(this.assets.queuecomplete) {
 			this.state = "play";
-			//console.log("start game!");
 			this.UIBG = this.assets.requestAssetFromLib("UI","skin","BG","image");
 			this.UISkin = this.assets.requestAssetFromLib("UI","skin","appSkin","image");
 			this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.editMode,"image");
 			var btnsCfg = this.assets.requestAssetFromLib("cfg","config","btns_cfg","txt");
 			var mapTest = JSON.parse(this.assets.requestAssetFromLib("maps","maps","map0","txt"));
 			btnsCfg = JSON.parse(btnsCfg).btns_tile_dungeon1;
-			//console.log(Math.ceil(btnsCfg.length/2));
-			//console.log(mapTest.tileData[0].toString().split(".").join(" , "));
 			var tDat = JSON.parse(this.assets.requestAssetFromLib("tiles","testTiles","testTiles_dat","txt"));
 			var tDatD1 = JSON.parse(this.assets.requestAssetFromLib("tiles","tiles","dungeon1Tiles_dat","txt"));
-			//console.log(this.tileBG.src);
+			//all original maps are 36 by 36 tiles
 			var maxX = (36 * 50) - ((8 * 50) - 0);
 			var maxY = (36 * 50) - ((5 * 50) - 10);
 			var gridSettings = {negXOff:600,negYOff:300,minX:true,minY:true,maxX:maxX,maxY:maxY};
@@ -64,17 +60,6 @@ Game.prototype.tick = function(){
 			this.grid = new BGGrid(this,this.viewPortMap,2,2,600,300,this.UIBG,gridSettings);
 			this.tileGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
 			this.menuGrid = new BGGrid(this,this.viewPortMenu,Math.ceil(btnsCfg.length/2),2,50,50,false,menuGridSettings);
-			/*for (var ix=0; ix < this.tileGrid.tiles.length; ix++) {
-				for (var iy=0; iy < this.tileGrid.tiles[ix].length; iy++) {
-					var r = Math.floor(Math.random() * 8);
-					//console.log(r);
-					if (r > 3) {
-						//console.log(r);                     parent,x,y,w,h,dat,type
-						var tType = "testTile" + (r-4);
-						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,tDat,tType);
-					}
-				}
-			}*/
 			var ic2 = 0;
 			for (var iy=0; iy < this.tileGrid.rows; iy++) {
 				for (var ix=0; ix < this.tileGrid.cols; ix++) {
@@ -85,9 +70,7 @@ Game.prototype.tick = function(){
 					var m = 0;
 					if (curr2.length >= 2) {
 						m = Number(curr2[1]);
-						//console.log("m orig : " + m);
 						if (m >= 4) m -= 4;
-						//console.log("m new : " + m);
 					}
 					for (var i3 = 0; i3 < mapTest.assetLexicon.length; i3++) {
 						if (mapTest.assetLexicon[i3].id == t) {
@@ -98,7 +81,7 @@ Game.prototype.tick = function(){
 					if (t != "BLANK_TILE") {
 						this.tileGrid.tiles[ix][iy] = new Tile(this,ix,iy,50,50,tDatD1,t);
 						this.tileGrid.tiles[ix][iy].setMeta(m);
-					}
+					} //no need to do anything with a blank tile, it doesn't actually exist
 					ic2++;
 				}
 			}
@@ -111,13 +94,10 @@ Game.prototype.tick = function(){
 					var btnDat = btnsCfg[ic];
 					var btn_off = this.assets.requestAssetFromLib("UI","btn",btnDat.btn,"image");
 					var btn_on = this.assets.requestAssetFromLib("UI","btn",btnDat.btn + "_on","image");
-					//console.log(btn_off.src);
-					//console.log(btn_on.src);
 					this.menuGrid.tiles[ix][iy] = new MenuBtn(this,btnDat.id,btn_off,btn_on,btnDat.g);
 					ic++;
 				}
 			}
-			//this.tileGrid.tiles[0][0] = new Tile(this,0,0,50,50,this.tileBG);
 		}
 	}
 	
@@ -142,7 +122,7 @@ Game.prototype.tick = function(){
 			this.mouseTPos.e = 1;
 			this.mouseTPos.x = this.tileGrid.tX + Math.floor(mx2/50);
 			this.mouseTPos.y = this.tileGrid.tY + Math.floor(my2/50);
-		}
+		} //checking if mouse inside map window
 		if(
 		(mx <= this.viewPortMenu.x + (this.viewPortMenu.width -1)  && mx >= this.viewPortMenu.x) &&
 		(my <= this.viewPortMenu.y + (this.viewPortMenu.height -1) && my >= this.viewPortMenu.y)
@@ -153,7 +133,7 @@ Game.prototype.tick = function(){
 			this.mouseTPos.x = this.menuGrid.tX + Math.floor(mx2/50);
 			this.mouseTPos.y = this.menuGrid.tY + Math.floor(my2/50);
 		
-		}
+		} //checking if map inside asset menu
 		if (this.mouseTPos.e == 1) {
 			if (this.controller.mouseState.down) {
 				if (this.editMode == "brush") {
@@ -166,23 +146,24 @@ Game.prototype.tick = function(){
 			}
 		}
 		if (this.mouseTPos.e == 2) {
-			if (this.controller.mouseState.down) {
+			if (this.controller.checkMousePress()) {
 				this.setCurrentTile({
 				id:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].id,
 				g:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].g
 				});
-				//console.log(this.currTile.g);
-				//console.log(this.currTile.id);
+				for (var ix=0; ix < this.menuGrid.cols; ix++) {
+					for (var iy=0; iy < this.menuGrid.rows; iy++) {
+						if (this.menuGrid.tiles[ix][iy].setMode) this.menuGrid.tiles[ix][iy].setMode("off");
+					}
+				}
 				this.currentAsset = this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].imgs.off;
+				this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].setMode("on");
 			}
 		}
 		this.grid.x += (dir.x * speed);
 		this.grid.y += (dir.y * speed);
 		this.tileGrid.x = this.grid.x;
 		this.tileGrid.y = this.grid.y;
-		//this.grid.x += 1;
-		//if (this.grid.x < 0) this.grid.x = 0;
-		//if (this.grid.y < 0) this.grid.y = 0;
 		this.grid.translatePos();
 		this.tileGrid.translatePos();
 		
@@ -197,13 +178,10 @@ Game.prototype.draw = function(){
 	this.tileGrid.draw();
 	//if edit mode is brush, and mouse is inside the map window
 	if(this.editMode == "brush" && this.mouseTPos.e == 1 && this.currentAsset) {
-		//var img = this.tileBank[this.currTile];
 		var img = this.currentAsset;
 		x = this.tileGrid.rx + ((this.mouseTPos.x - this.tileGrid.tX) * 50)
 		y = this.tileGrid.ry + ((this.mouseTPos.y - this.tileGrid.tY) * 50)
-		//this.renderer.ctx.globalAlpha = .5;
 		this.renderer.ctx.drawImage(img,x,y);
-		//this.renderer.ctx.globalAlpha = 1;
 	}
 
 	//ui render layer
@@ -217,7 +195,4 @@ Game.prototype.draw = function(){
 	var cy = Math.round(this.cursor.height/-2);
 	this.renderer.ctx.drawImage(this.cursor,this.controller.mouseState.mX + cx,this.controller.mouseState.mY + cy);
 	this.renderer.ctx.fillStyle = "#ffffff";
-	//this.renderer.ctx.fillText("grid pos: (" + this.grid.x + "," + this.grid.y + ")",10,10);
-	//this.renderer.ctx.fillText("tile grid tilepos: (" + this.tileGrid.tX + "," + this.tileGrid.tY + ")",10,10);
-	//this.renderer.ctx.fillText("mouse tilepos: (" + this.mouseTPos.e + " | " + this.mouseTPos.x + "," + this.mouseTPos.y + ")",10,20);
 }

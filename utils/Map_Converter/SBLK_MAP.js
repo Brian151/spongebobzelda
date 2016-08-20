@@ -59,7 +59,12 @@ function SBZ1(xmlMapData){
 	
 	//parses the main map
 	for (var i = 0; i < map.length; i++) {
-		var cells = map[i].getElementsByTagName("c");
+		//patch by an anonymouse invidual...
+		var cells = new Array();
+			for (var j = 0; j < map[i].children.length; j++) {
+				cells.push(map[i].children[j]);
+			}
+		//end patch
 		//console.log("row " + i + ": " + cells.length);
 		for (var i2 = 0; i2 < cells.length; i2++){
 			var cell = cells[i2];

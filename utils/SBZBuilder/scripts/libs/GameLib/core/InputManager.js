@@ -6,7 +6,8 @@ var InputManager = function(parent) {
 	this.mouseState = {
 		"mX" : 0,
 		"mY" : 0,
-		"down" : false
+		"down" : false,
+		"press" : false
 	};
 	
 	for (var i = 0; i < 512; i++) {
@@ -32,6 +33,7 @@ var InputManager = function(parent) {
 	
 	this.parent.canvas.addEventListener("mouseup",function(event){
 		self.mouseState.down = false;
+		self.mouseState.press = false;
 	});
 	
 	document.addEventListener("keydown",function(event){
@@ -58,6 +60,14 @@ var InputManager = function(parent) {
 				current.cooldown = 0;
 			}
 	});
+}
+InputManager.prototype.checkMousePress = function() {
+	if (this.mouseState.down && !this.mouseState.press) {
+		this.mouseState.press = true;
+		return true;
+	} else {
+		return false;
+	}
 }
 InputManager.prototype.checkMouseCollision = function(e) {
 	var out = {"result":false};
