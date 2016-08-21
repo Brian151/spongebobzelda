@@ -31,6 +31,12 @@
 			"file" : "config.json",
 			"group" : "config",
 			"type" : "txt"
+		},
+		{
+			"id" : "offsets_link_cfg",
+			"file" : "offsetsLinker.json",
+			"group" : "config",
+			"type" : "txt"
 		}
 	]
 }

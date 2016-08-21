@@ -2,6 +2,14 @@
 SpongebobZelda Map Editor Game Setup
 */
 
+/*ref:
+tiles - t
+objects,puzzles,doors - o
+misc - m
+enemies,characters - c
+items,keyitems - i
+*/
+
 Game.prototype.init = function(mainCanvas) {
 	this.state = "init";
 	this.assets = new AssetManager(this,"assets/");
@@ -13,6 +21,7 @@ Game.prototype.init = function(mainCanvas) {
 	this.assets.loadAssetLib("tiles");
 	this.assets.loadAssetLib("cfg");
 	this.assets.loadAssetLib("maps");
+	this.assets.loadAssetLib("props");
 	console.log("SBZBuilder Init!");
 	//viewports...
 	this.viewPortMap = {
@@ -47,6 +56,8 @@ Game.prototype.tick = function(){
 			this.UISkin = this.assets.requestAssetFromLib("UI","skin","appSkin","image");
 			this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.editMode,"image");
 			var btnsCfg = this.assets.requestAssetFromLib("cfg","config","btns_cfg","txt");
+			var offs = JSON.parse(this.assets.requestAssetFromLib("cfg","config","offsets_cfg","txt"));
+			var offs_l = JSON.parse(this.assets.requestAssetFromLib("cfg","config","offsets_link_cfg","txt"));
 			var mapTest = JSON.parse(this.assets.requestAssetFromLib("maps","maps","map0","txt"));
 			btnsCfg = JSON.parse(btnsCfg).btns_tile_dungeon1;
 			var tDat = JSON.parse(this.assets.requestAssetFromLib("tiles","testTiles","testTiles_dat","txt"));
@@ -59,6 +70,7 @@ Game.prototype.tick = function(){
 			var menuGridSettings = {minX:true,minY:true,maxW:2,maxH:6};
 			this.grid = new BGGrid(this,this.viewPortMap,2,2,600,300,this.UIBG,gridSettings);
 			this.tileGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
+			this.objGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
 			this.menuGrid = new BGGrid(this,this.viewPortMenu,Math.ceil(btnsCfg.length/2),2,50,50,false,menuGridSettings);
 			var ic2 = 0;
 			for (var iy=0; iy < this.tileGrid.rows; iy++) {
@@ -84,6 +96,22 @@ Game.prototype.tick = function(){
 					} //no need to do anything with a blank tile, it doesn't actually exist
 					ic2++;
 				}
+			}
+			for (var i=0; i < mapTest.objects.enemies.length; i++) {
+				var curr = mapTest.objects.enemies[i];
+				console.log(JSON.stringify(curr));
+				var x = curr.c;
+				var y = curr.r;
+				var l = curr.l;
+				for (var i3 = 0; i3 < mapTest.assetLexicon.length; i3++) {
+					if (mapTest.assetLexicon[i3].id == l) {
+						l = mapTest.assetLexicon[i3].l;
+						break;
+					}
+				}
+				var o = offs[offs_l[l]];
+				var a = this.assets.requestAssetFromLib("props","LBEnemy",l,"image");
+				this.objGrid.tiles[x][y] = new LBAsset(this,o,a,"enemy");
 			}
 			this.tileDat = tDat;
 			this.tileDatD1 = tDatD1;
@@ -162,10 +190,11 @@ Game.prototype.tick = function(){
 		}
 		this.grid.x += (dir.x * speed);
 		this.grid.y += (dir.y * speed);
-		this.tileGrid.x = this.grid.x;
-		this.tileGrid.y = this.grid.y;
+		this.objGrid.x = this.tileGrid.x = this.grid.x;
+		this.objGrid.y = this.tileGrid.y = this.grid.y;
 		this.grid.translatePos();
 		this.tileGrid.translatePos();
+		this.objGrid.translatePos();
 		
 		this.draw();
 	}
@@ -176,6 +205,7 @@ Game.prototype.draw = function(){
 	//bg rendering layer
 	this.grid.draw();
 	this.tileGrid.draw();
+	this.objGrid.draw();
 	//if edit mode is brush, and mouse is inside the map window
 	if(this.editMode == "brush" && this.mouseTPos.e == 1 && this.currentAsset) {
 		var img = this.currentAsset;

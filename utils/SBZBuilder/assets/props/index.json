@@ -1,6 +1,36 @@
 {
 	"groups" : ["LBEnemy"],
 	"preload" : true,
-	"assets" : [ 
+	"assets" : [
+		{
+			"id" : "mcLBEnemyJellyfish1",
+			"file" : "en/mcLBEnemyJellyfishLight.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyJellyfish2",
+			"file" : "en/mcLBEnemyJellyfishMid.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyJellyfish3",
+			"file" : "en/mcLBEnemyJellyfishHigh.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyEel",
+			"file" : "en/mcLBEnemyEel.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyGaseousRock",
+			"file" : "en/mcLBEnemyGaseousRock.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		}
 	]
 }
