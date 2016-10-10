@@ -31,6 +31,30 @@
 			"file" : "en/mcLBEnemyGaseousRock.png",
 			"group" : "LBEnemy",
 			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyFish1",
+			"file" : "en/LBEnemyLanternFish01.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyFish2",
+			"file" : "en/LBEnemyLanternFish02.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemyFish3",
+			"file" : "en/LBEnemyLanternFish03.png",
+			"group" : "LBEnemy",
+			"type" : "image"
+		},
+		{
+			"id" : "mcLBEnemySlug",
+			"file" : "en/LBEnemySlug.png",
+			"group" : "LBEnemy",
+			"type" : "image"
 		}
 	]
 }

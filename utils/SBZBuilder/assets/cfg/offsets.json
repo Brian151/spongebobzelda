@@ -21,11 +21,11 @@
   },
   "EnemyLanternFish": {
     "x": -10,
-    "y": -27
+    "y": -28
   },
   "EnemySeaweed": {
     "x": 0,
-    "y": -16
+    "y": -17
   },
   "EnemyLavaGolem": {
     "x": -7,

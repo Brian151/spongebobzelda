@@ -25,6 +25,18 @@
 			"file" : "tiles.json",
 			"group" : "tiles",
 			"type" : "txt"
+		},
+		{
+			"id" : "tilesDungeonlv2",
+			"file" : "tilesDungeonlvl2.png",
+			"group" : "tiles",
+			"type" : "image"
+		},
+		{
+			"id" : "dungeon2Tiles_dat",
+			"file" : "tiles2.json",
+			"group" : "tiles",
+			"type" : "txt"
 		}
 	]
 }

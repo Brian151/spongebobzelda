@@ -1,0 +1,138 @@
+{
+	"img" : "tilesDungeonlv2",
+	"g" : "tiles",
+	"dims" : {
+		"w" : 50,
+		"h" : 50
+	},
+	"tiles" : {
+		"mcLBTileFloorW02Lv2" : {
+			"r" : 8
+		},
+		"mcLBTileFloor00Lv2" : {
+			"r" : 0
+		},
+		"mcLBTileFloor01Lv2" : {
+			"r" : 1
+		},
+		"mcLBTileFloor03Lv2" : {
+			"r" : 2
+		},
+		"mcLBTileFloor07Lv2" : {
+			"r" : 10
+		},
+		"mcLBTileFloor06Lv2" : {
+			"r" : 5
+		},
+		"mcLBTileFloorW01Lv2" : {
+			"r" : 7
+		},
+		"mcLBTileFloorW00Lv2" : {
+			"r" : 6
+		},
+		"mcLBTileFloor05Lv2" : {
+			"r" : 4
+		},
+		"mcLBTileFloor02Lv2" : {
+			"r" : 11
+		},
+		"mcLBTileFloor04Lv2" : {
+			"r" : 3
+		},
+		"mcLBTileFloorW03Lv2" : {
+			"r" : 9
+		},
+		"mcLBTileFloorW04Lv2" : {
+			"r" : 13
+		},
+		"mcLBObjectRoomBlockLv2" : {
+			"r" : 12
+		}
+	},
+	"regions" : [
+		{
+			"x" : 0,
+			"y" : 0,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 0,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 2,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 2,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 4,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 4,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 6,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 6,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 8,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 2,
+			"y" : 8,
+			"w" : 2,
+			"h" : 2
+		},
+		{
+			"x" : 0,
+			"y" : 10,
+			"w" : 1,
+			"h" : 1
+		},
+		{
+			"x" : 1,
+			"y" : 10,
+			"w" : 1,
+			"h" : 1
+		},
+		{
+			"x" : 2,
+			"y" : 10,
+			"w" : 1,
+			"h" : 1
+		},
+		{
+			"x" : 3,
+			"y" : 10,
+			"w" : 1,
+			"h" : 1
+		}
+	]
+}

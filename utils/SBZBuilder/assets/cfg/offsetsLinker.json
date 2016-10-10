@@ -3,5 +3,9 @@
 	"mcLBEnemyJellyfish2" : "EnemyJellyfish",
 	"mcLBEnemyJellyfish3" : "EnemyJellyfish",
 	"mcLBEnemyEel" : "EnemyEel",
-	"mcLBEnemyGaseousRock" : "EnemyGaseousRock"
+	"mcLBEnemyGaseousRock" : "EnemyGaseousRock",
+	"mcLBEnemyFish1" : "EnemyLanternFish",
+	"mcLBEnemyFish2" : "EnemyLanternFish",
+	"mcLBEnemyFish3" : "EnemyLanternFish",
+	"mcLBEnemySlug" : "EnemySlug"
 }
