@@ -27,7 +27,7 @@ scroll map down a bit till you see some tiles, than scroll right
 choose between 'brush' or 'erase'
 choose any of the tiles from epsiode 1 dungeon tileset
 [import]
-tiles & enemies only (dungeons lv1 & lv2, 2 untested)
+tiles & enemies only (dungeons lv1 & lv2, 2 untested, Lvl3 only tiles and not tested)
 hard-coded to patrick01a.sbz
 (note : map data entirely different format than original map, 
 DO NOT COPY INTO DATA FOLDER)
