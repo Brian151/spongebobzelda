@@ -1,5 +1,5 @@
 {
-	"groups" : ["config"],
+	"groups" : ["config","registry"],
 	"preload" : true,
 	"assets" : [ 
 		{
@@ -36,6 +36,12 @@
 			"id" : "offsets_link_cfg",
 			"file" : "offsetsLinker.json",
 			"group" : "config",
+			"type" : "txt"
+		},
+		{
+			"id" : "assets_Reg",
+			"file" : "assetReg.json",
+			"group" : "registry",
 			"type" : "txt"
 		}
 	]

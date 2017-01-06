@@ -1,0 +1,55 @@
+{
+	"meta" : {
+		"formatNotes" : [
+			"tiles: tileID | tileSet | assetGroup",
+			"enemies: enemyID | assetGroup ???"		
+		]
+	},
+	"tiles" : [
+		{"t":"testTile0","s":"testTiles","g":"testTiles"},
+		{"t":"testTile1","s":"testTiles","g":"testTiles"},
+		{"t":"testTile2","s":"testTiles","g":"testTiles"},
+		{"t":"testTile3","s":"testTiles","g":"testTiles"},
+		{"t":"mcLBTileLairCorner00","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairTopWall00","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairCorner03","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairBottomWall00","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairFloor00","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairCorner01","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairCorner02","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairCeilling00","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBObjectRoomBlockLvl1","s":"tilesDungeonlv1","g":"tiles"},
+		{"t":"mcLBTileLairFloorW02Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor00Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor01Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor03Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor07Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor06Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloorW01Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloorW00Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor05Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor02Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloor04Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloorW03Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloorW04Lv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBObjectRoomBlockLv2","s":"tilesDungeonlv2","g":"tiles"},
+		{"t":"mcLBTileLairFloorW02Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor00Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor01Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor03Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloorTopLv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor06Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloorW01Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloorW00Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor05Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor02Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor04Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloorW03Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloorW04Lv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBObjectRoomBlockLv3","s":"tilesDungeonlv3","g":"tiles"},
+		{"t":"mcLBTileLairFloor07Lv3","s":"tilesDungeonlv3","g":"tiles"}
+	],
+	"enemies" : [
+		
+	]
+}
