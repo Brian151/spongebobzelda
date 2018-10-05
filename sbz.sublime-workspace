@@ -1,0 +1,519 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getItem"
+			],
+			[
+				"reg",
+				"registerItem"
+			],
+			[
+				"cat",
+				"categories"
+			],
+			[
+				"has",
+				"hasCategory"
+			],
+			[
+				"c",
+				"crystalienroot"
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"categor",
+				"categories"
+			],
+			[
+				"f",
+				"friends"
+			],
+			[
+				"sr",
+				"script\tTag"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"is",
+				"island"
+			],
+			[
+				"def",
+				"defList"
+			],
+			[
+				"isa",
+				"islands"
+			],
+			[
+				"i",
+				"islands"
+			],
+			[
+				"asset",
+				"assetText"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "utils/SBZBuilder/readme.txt",
+			"settings":
+			{
+				"buffer_size": 1123,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utils/SBZBuilder/scripts/sbzbuilder/MyGame.js",
+			"settings":
+			{
+				"buffer_size": 9119,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utils/SBZBuilder/assets/cfg/offsets.json",
+			"settings":
+			{
+				"buffer_size": 1512,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utils/SBZBuilder/scripts/sbzbuilder/LBAsset.js",
+			"settings":
+			{
+				"buffer_size": 421,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{\n\t\"groups\" : [\"LBEnemy\"],\n\t\"preload\" : true,\n\t\"assets\" : [\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyJellyfish1\",\n\t\t\t\"file\" : \"en/mcLBEnemyJellyfishLight.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyJellyfish2\",\n\t\t\t\"file\" : \"en/mcLBEnemyJellyfishMid.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyJellyfish3\",\n\t\t\t\"file\" : \"en/mcLBEnemyJellyfishHigh.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyEel\",\n\t\t\t\"file\" : \"en/mcLBEnemyEel.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyGaseousRock\",\n\t\t\t\"file\" : \"en/mcLBEnemyGaseousRock.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyFish1\",\n\t\t\t\"file\" : \"en/LBEnemyLanternFish01.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyFish2\",\n\t\t\t\"file\" : \"en/LBEnemyLanternFish02.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemyFish3\",\n\t\t\t\"file\" : \"en/LBEnemyLanternFish03.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t{\n\t\t\t\"id\" : \"mcLBEnemySlug\",\n\t\t\t\"file\" : \"en/LBEnemySlug.png\",\n\t\t\t\"group\" : \"LBEnemy\",\n\t\t\t\"type\" : \"image\"\n\t\t},\n\t\t\n\t]\n}",
+			"file": "utils/SBZBuilder/assets/props/index.json",
+			"file_size": 1245,
+			"file_write_time": 131588390289510966,
+			"settings":
+			{
+				"buffer_size": 1190,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/cleme/Documents/github/personal/sbz",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder/assets",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder/assets/cfg",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder/scripts",
+		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder/scripts/sbzbuilder"
+	],
+	"file_history":
+	[
+		"/C/Users/cleme/Desktop/crystalienhtml5/crystalien_html5.js",
+		"/C/Users/cleme/AppData/Roaming/.minecraft/versions/17w48a/17w48a/assets/minecraft/models/block/slime_block.json",
+		"/C/Users/cleme/AppData/Roaming/.minecraft/versions/17w48a/17w48a/data/minecraft/recipes/fire_charge.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/slime_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/parrot_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/llama_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/squid_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/guardian_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/cat_egg.json",
+		"/C/Users/cleme/AppData/Local/osu!/osu!.cleme.cfg",
+		"/C/Users/cleme/AppData/Local/osu!/osu!.cfg",
+		"/C/Users/cleme/rustprojects/riff/src/structs.rs",
+		"/C/Users/cleme/rustprojects/riff/src/lib.rs",
+		"/C/Users/cleme/Desktop/ffdec.dsm",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/donkey_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/rabbit_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/horse_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/sheep_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/cow_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/pig_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/chicken_egg.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/monster_spawner.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/temp.json",
+		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/redstone_block.json",
+		"/C/Users/cleme/Desktop/tmp/mobs.json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneUserData_4185312.json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuildList.json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuildLeaderboard.json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/2337_Request.txt",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/temp/cs_Scripts.txt",
+		"/C/Users/cleme/Desktop/!phoria/!phoria.js-master/phoria.js-master/testMineCraft.html",
+		"/C/Users/cleme/Desktop/!phoria/!phoria.js-master/phoria.js-master/scripts/model/ModelOcelot.java",
+		"/C/Users/cleme/Desktop/tmp/squid.json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuild_2684(Frozen).json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneUserData_24141584(Ultraschall).json",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/cs_user_cleaner.html",
+		"/C/Users/cleme/Desktop/Minecraft 4K Bundle/M/M.java",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/guild_.htm",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/logerror",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/test2.html",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/scripts/lib.js",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/frame_islands.html",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/v14818_staticDataE.js",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/child.html",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/test2.html",
+		"/C/Users/cleme/Desktop/v14769_staticData.json",
+		"/C/Users/cleme/Desktop/v13656_staticData.json",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/download_failures.txt",
+		"/C/Users/cleme/Desktop/v14600_staticData.json",
+		"/C/Users/cleme/Desktop/cs_Scripts.txt",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/launcher.htm",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/css/style_kong.css",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/css/style.css",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/16_.htm",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/9_.htm",
+		"/C/Users/cleme/Desktop/list.txt",
+		"/C/Users/cleme/Desktop/v14818_staticDataE.js",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/launcher.htm",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/v14818_staticData.js",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/DOMDocument.xml",
+		"/C/Users/cleme/Documents/Fiddler2/Captures/v14818_staticData.json",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/PathFinder.as",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Radar.as",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Squads.as",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Camera.as",
+		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/test.html",
+		"/C/Users/cleme/Desktop/m.v101.mp3",
+		"/C/Users/cleme/Desktop/Sublime Text Build 3143 x64/Radar.as",
+		"/C/Users/cleme/Desktop/DOMDocument.xml"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__\\main",
+			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__",
+			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__\\main",
+			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sign",
+			"section: .reloc",
+			"reso",
+			"full",
+			"colorSpecial(",
+			"colordata",
+			"color",
+			"poisonpool",
+			"combatpumpkinboss",
+			"pumpkin cat",
+			"pumpk",
+			"squash the pum",
+			"suqash",
+			"IslandMap",
+			"json",
+			"txt",
+			".txt",
+			".json"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "utils/SBZBuilder/readme.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "utils/SBZBuilder/scripts/sbzbuilder/MyGame.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4663,
+								4663
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1215.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "utils/SBZBuilder/assets/cfg/offsets.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1512,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "utils/SBZBuilder/scripts/sbzbuilder/LBAsset.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "utils/SBZBuilder/assets/props/index.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1185,
+								1185
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "sbz.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 346.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

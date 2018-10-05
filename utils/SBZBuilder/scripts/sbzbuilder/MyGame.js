@@ -1,13 +1,13 @@
 /*
-SpongebobZelda Map Editor Game Setup
+	SpongebobZelda Map Editor Game Object
 */
 
-/*ref:
-tiles - t
-objects,puzzles,doors - o
-misc - m
-enemies,characters - c
-items,keyitems - i
+/* XML ref:
+	tiles - t
+	objects,puzzles,doors - o
+	misc - m
+	enemies,characters - c
+	items,keyitems - i
 */
 
 Game.prototype.init = function(mainCanvas) {
@@ -16,6 +16,7 @@ Game.prototype.init = function(mainCanvas) {
 	this.canvas = document.getElementById(mainCanvas);
 	this.renderer = GameObjs.renderer = new GraphicsHandler(this.canvas);
 	this.controller = new InputManager(this);
+	this.ui = new SBZBuilderUI(this);
 	this.assets.loadAssetLib("cursor");
 	this.assets.loadAssetLib("UI");
 	this.assets.loadAssetLib("tiles");
@@ -41,8 +42,8 @@ Game.prototype.init = function(mainCanvas) {
 	this.tileBank = [];
 }
 Game.prototype.setEditMode = function(mode){
-	this.editMode = mode;
-	this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.editMode,"image");
+	this.ui.editMode = mode;
+	this.cursor = this.assets.requestAssetFromLib("cursor","cur",this.ui.editMode,"image");
 }
 Game.prototype.setCurrentTile = function(tile){
 	this.currTile = tile;
@@ -73,6 +74,7 @@ Game.prototype.tick = function(){
 			this.objGrid = new BGGrid(this,this.viewPortMap,36,36,50,50,false,tileGridSettings);
 			this.menuGrid = new BGGrid(this,this.viewPortMenu,Math.ceil(btnsCfg.length/2),2,50,50,false,menuGridSettings);
 			var ic2 = 0;
+			console.log(mapTest);
 			for (var iy=0; iy < this.tileGrid.rows; iy++) {
 				for (var ix=0; ix < this.tileGrid.cols; ix++) {
 					if (ic2 >= mapTest.tileData.length) break;
@@ -99,7 +101,7 @@ Game.prototype.tick = function(){
 			}
 			for (var i=0; i < mapTest.objects.enemies.length; i++) {
 				var curr = mapTest.objects.enemies[i];
-				console.log(JSON.stringify(curr));
+				// console.log(JSON.stringify(curr));
 				var x = curr.c;
 				var y = curr.r;
 				var l = curr.l;
@@ -112,6 +114,22 @@ Game.prototype.tick = function(){
 				var o = offs[offs_l[l]];
 				var a = this.assets.requestAssetFromLib("props","LBEnemy",l,"image");
 				this.objGrid.tiles[x][y] = new LBAsset(this,o,a,"enemy");
+			}
+			for (var i=0; i < mapTest.objects.destructables.length; i++) {
+				var curr = mapTest.objects.destructables[i];
+				var x = curr.c; // cell
+				var y = curr.r; // row
+				var l = curr.l; // lexicon ID
+				for (var i3 = 0; i3 < mapTest.assetLexicon.length; i3++) {
+					if (mapTest.assetLexicon[i3].id == l) {
+						l = mapTest.assetLexicon[i3].l;
+						break;
+					}
+				}
+				//var o = offs[offs_l[l]];
+				//var a = this.assets.requestAssetFromLib("props","LBDes",l,"image");
+				//this.objGrid.tiles[x][y] = new LBAsset(this,o,a,"destruct");
+				console.log(l);
 			}
 			this.tileDat = tDat;
 			this.tileDatD1 = tDatD1;
@@ -130,72 +148,7 @@ Game.prototype.tick = function(){
 	}
 	
 	if(this.state == "play") {
-		var mx = this.controller.mouseState.mX;
-		var my = this.controller.mouseState.mY;
-		var speed = 2;
-		var dir = {"x":0,"y":0}
-		this.mouseTPos = {e:0,x:0,y:0}
-		if(
-		(mx <= this.viewPortMap.x + (this.viewPortMap.width -1)  && mx >= this.viewPortMap.x) &&
-		(my <= this.viewPortMap.y + (this.viewPortMap.height -1) && my >= this.viewPortMap.y)
-		) {
-			var distX = 20;
-			var distY = 15;
-			if (mx <= this.viewPortMap.x + distX && mx >= this.viewPortMap.x) dir.x = -1;
-			if (mx >= (this.viewPortMap.x + (this.viewPortMap.width - distX - 1)) && mx <= (this.viewPortMap.x + (this.viewPortMap.width - 1))) dir.x = 1;
-			if (my <= this.viewPortMap.y + distY && my >= this.viewPortMap.y) dir.y = -1;
-			if (my >= (this.viewPortMap.y + (this.viewPortMap.height - distY - 1)) && my <= (this.viewPortMap.y + (this.viewPortMap.height - 1))) dir.y = 1;
-			var mx2 = Math.abs(mx -  this.tileGrid.rx);
-			var my2 = Math.abs(my -  this.tileGrid.ry);
-			this.mouseTPos.e = 1;
-			this.mouseTPos.x = this.tileGrid.tX + Math.floor(mx2/50);
-			this.mouseTPos.y = this.tileGrid.tY + Math.floor(my2/50);
-		} //checking if mouse inside map window
-		if(
-		(mx <= this.viewPortMenu.x + (this.viewPortMenu.width -1)  && mx >= this.viewPortMenu.x) &&
-		(my <= this.viewPortMenu.y + (this.viewPortMenu.height -1) && my >= this.viewPortMenu.y)
-		) {
-			var mx2 = Math.abs(mx -  this.menuGrid.rx);
-			var my2 = Math.abs(my -  this.menuGrid.ry);
-			this.mouseTPos.e = 2;
-			this.mouseTPos.x = this.menuGrid.tX + Math.floor(mx2/50);
-			this.mouseTPos.y = this.menuGrid.tY + Math.floor(my2/50);
-		
-		} //checking if map inside asset menu
-		if (this.mouseTPos.e == 1) {
-			if (this.controller.mouseState.down) {
-				if (this.editMode == "brush") {
-					var g = this[this.currTile.g];
-					var id = this.currTile.id;
-					this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = new Tile(this,ix,iy,50,50,g,id);
-				} else if (this.editMode == "erase") {
-					this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = {draw:function(){}};
-				}
-			}
-		}
-		if (this.mouseTPos.e == 2) {
-			if (this.controller.checkMousePress()) {
-				this.setCurrentTile({
-				id:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].id,
-				g:this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].g
-				});
-				for (var ix=0; ix < this.menuGrid.cols; ix++) {
-					for (var iy=0; iy < this.menuGrid.rows; iy++) {
-						if (this.menuGrid.tiles[ix][iy].setMode) this.menuGrid.tiles[ix][iy].setMode("off");
-					}
-				}
-				this.currentAsset = this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].imgs.off;
-				this.menuGrid.tiles[this.mouseTPos.x][this.mouseTPos.y].setMode("on");
-			}
-		}
-		this.grid.x += (dir.x * speed);
-		this.grid.y += (dir.y * speed);
-		this.objGrid.x = this.tileGrid.x = this.grid.x;
-		this.objGrid.y = this.tileGrid.y = this.grid.y;
-		this.grid.translatePos();
-		this.tileGrid.translatePos();
-		this.objGrid.translatePos();
-		
+		this.stateplaytick();
 		this.draw();
 	}
 }
@@ -225,4 +178,29 @@ Game.prototype.draw = function(){
 	var cy = Math.round(this.cursor.height/-2);
 	this.renderer.ctx.drawImage(this.cursor,this.controller.mouseState.mX + cx,this.controller.mouseState.mY + cy);
 	this.renderer.ctx.fillStyle = "#ffffff";
+}
+
+Game.prototype.stateplaytick = function() {
+	var mx = this.controller.mouseState.mX;
+		var my = this.controller.mouseState.mY;
+		this.ui.tick();
+		var speed = 2;
+		var dir = {"x":0,"y":0}
+		this.mouseTPos = {e:0,x:0,y:0}
+		this.mouseTPos.x = this.ui.mouseTPos.x;
+		this.mouseTPos.y = this.ui.mouseTPos.y;
+		this.mouseTPos.e = this.ui.mouseTPos.e;
+		this.objGrid.x = this.tileGrid.x = this.grid.x;
+		this.objGrid.y = this.tileGrid.y = this.grid.y;
+		this.grid.translatePos();
+		this.tileGrid.translatePos();
+		this.objGrid.translatePos();
+}
+
+Game.prototype.setMapTile = function(tx,ty,g,id) {
+	this.tileGrid.tiles[tx][ty] = new Tile(this,0,0,50,50,g,id);
+}
+
+Game.prototype.removeMapTile = function(tx,ty) {
+	this.tileGrid.tiles[this.mouseTPos.x][this.mouseTPos.y] = {draw:function(){}};
 }
