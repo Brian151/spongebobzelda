@@ -184,12 +184,12 @@ Game.prototype.stateplaytick = function() {
 	var mx = this.controller.mouseState.mX;
 		var my = this.controller.mouseState.mY;
 		this.ui.tick();
-		var speed = 2;
+		/*var speed = 2;
 		var dir = {"x":0,"y":0}
 		this.mouseTPos = {e:0,x:0,y:0}
 		this.mouseTPos.x = this.ui.mouseTPos.x;
 		this.mouseTPos.y = this.ui.mouseTPos.y;
-		this.mouseTPos.e = this.ui.mouseTPos.e;
+		this.mouseTPos.e = this.ui.mouseTPos.e;*/
 		this.objGrid.x = this.tileGrid.x = this.grid.x;
 		this.objGrid.y = this.tileGrid.y = this.grid.y;
 		this.grid.translatePos();

@@ -2,72 +2,7 @@
 	"auto_complete":
 	{
 		"selected_items":
-		[
-			[
-				"get",
-				"getItem"
-			],
-			[
-				"reg",
-				"registerItem"
-			],
-			[
-				"cat",
-				"categories"
-			],
-			[
-				"has",
-				"hasCategory"
-			],
-			[
-				"c",
-				"crystalienroot"
-			],
-			[
-				"ca",
-				"categories"
-			],
-			[
-				"categor",
-				"categories"
-			],
-			[
-				"f",
-				"friends"
-			],
-			[
-				"sr",
-				"script\tTag"
-			],
-			[
-				"font",
-				"font-weight"
-			],
-			[
-				"de",
-				"description"
-			],
-			[
-				"is",
-				"island"
-			],
-			[
-				"def",
-				"defList"
-			],
-			[
-				"isa",
-				"islands"
-			],
-			[
-				"i",
-				"islands"
-			],
-			[
-				"asset",
-				"assetText"
-			]
-		]
+		[]
 	},
 	"buffers":
 	[
@@ -157,77 +92,7 @@
 		"/C/Users/cleme/Documents/github/personal/sbz/utils/SBZBuilder/scripts/sbzbuilder"
 	],
 	"file_history":
-	[
-		"/C/Users/cleme/Desktop/crystalienhtml5/crystalien_html5.js",
-		"/C/Users/cleme/AppData/Roaming/.minecraft/versions/17w48a/17w48a/assets/minecraft/models/block/slime_block.json",
-		"/C/Users/cleme/AppData/Roaming/.minecraft/versions/17w48a/17w48a/data/minecraft/recipes/fire_charge.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/slime_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/parrot_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/llama_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/squid_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/guardian_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/cat_egg.json",
-		"/C/Users/cleme/AppData/Local/osu!/osu!.cleme.cfg",
-		"/C/Users/cleme/AppData/Local/osu!/osu!.cfg",
-		"/C/Users/cleme/rustprojects/riff/src/structs.rs",
-		"/C/Users/cleme/rustprojects/riff/src/lib.rs",
-		"/C/Users/cleme/Desktop/ffdec.dsm",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/donkey_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/rabbit_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/horse_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/sheep_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/cow_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/pig_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/chicken_egg.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/monster_spawner.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/temp.json",
-		"/C/Users/cleme/Desktop/tmp/craftable_spawners/data/spawnz/recipes/redstone_block.json",
-		"/C/Users/cleme/Desktop/tmp/mobs.json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneUserData_4185312.json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuildList.json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuildLeaderboard.json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/2337_Request.txt",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/temp/cs_Scripts.txt",
-		"/C/Users/cleme/Desktop/!phoria/!phoria.js-master/phoria.js-master/testMineCraft.html",
-		"/C/Users/cleme/Desktop/!phoria/!phoria.js-master/phoria.js-master/scripts/model/ModelOcelot.java",
-		"/C/Users/cleme/Desktop/tmp/squid.json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneGuild_2684(Frozen).json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cloudstoneUserData_24141584(Ultraschall).json",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/cs_user_cleaner.html",
-		"/C/Users/cleme/Desktop/Minecraft 4K Bundle/M/M.java",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/guild_.htm",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/logerror",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/test2.html",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/scripts/lib.js",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/frame_islands.html",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/cs_data/v14818_staticDataE.js",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/child.html",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/test2.html",
-		"/C/Users/cleme/Desktop/v14769_staticData.json",
-		"/C/Users/cleme/Desktop/v13656_staticData.json",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/download_failures.txt",
-		"/C/Users/cleme/Desktop/v14600_staticData.json",
-		"/C/Users/cleme/Desktop/cs_Scripts.txt",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/launcher.htm",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/css/style_kong.css",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/Test/css/style.css",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/16_.htm",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/9_.htm",
-		"/C/Users/cleme/Desktop/list.txt",
-		"/C/Users/cleme/Desktop/v14818_staticDataE.js",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/cs/launcher.htm",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/v14818_staticData.js",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/DOMDocument.xml",
-		"/C/Users/cleme/Documents/Fiddler2/Captures/v14818_staticData.json",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/PathFinder.as",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Radar.as",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Squads.as",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/Camera.as",
-		"/C/Users/cleme/Desktop/PMD_TILES_TSR/Sublime Text Build 3143 x64/test.html",
-		"/C/Users/cleme/Desktop/m.v101.mp3",
-		"/C/Users/cleme/Desktop/Sublime Text Build 3143 x64/Radar.as",
-		"/C/Users/cleme/Desktop/DOMDocument.xml"
-	],
+	[],
 	"find":
 	{
 		"height": 40.0
@@ -236,37 +101,13 @@
 	{
 		"height": 104.0,
 		"where_history":
-		[
-			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__\\main",
-			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__",
-			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__\\main",
-			"C:\\Users\\cleme\\Desktop\\PMD_TILES_TSR\\cs\\Test\\__ACTIONSCRIPTS__"
-		]
+		[]
 	},
 	"find_state":
 	{
 		"case_sensitive": false,
 		"find_history":
-		[
-			"sign",
-			"section: .reloc",
-			"reso",
-			"full",
-			"colorSpecial(",
-			"colordata",
-			"color",
-			"poisonpool",
-			"combatpumpkinboss",
-			"pumpkin cat",
-			"pumpk",
-			"squash the pum",
-			"suqash",
-			"IslandMap",
-			"json",
-			"txt",
-			".txt",
-			".json"
-		],
+		[],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
